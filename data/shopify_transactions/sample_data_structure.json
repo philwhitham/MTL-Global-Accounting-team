@@ -1,0 +1,122 @@
+{
+  "metadata": {
+    "company_name": "Shopify Inc.",
+    "company_id": "SHOPIFY001",
+    "reporting_period": {
+      "quarter": "Q1",
+      "year": 2025,
+      "start_date": "2025-01-01",
+      "end_date": "2025-03-31"
+    },
+    "generation_date": "2025-01-15"
+  },
+  "financial_condition": {
+    "total_assets": 1000000.00,
+    "total_liabilities": 500000.00,
+    "net_worth": 500000.00,
+    "cash_and_cash_equivalents": 300000.00,
+    "investments": 400000.00,
+    "accounts_receivable": 200000.00,
+    "other_assets": 100000.00
+  },
+  "company_transactions": {
+    "total_volume": 5000000.00,
+    "transaction_count": 10000,
+    "average_transaction_amount": 500.00,
+    "money_transmission_volume": 4500000.00,
+    "money_transmission_count": 9000,
+    "check_cashing_volume": 300000.00,
+    "check_cashing_count": 600,
+    "money_order_volume": 200000.00,
+    "money_order_count": 400
+  },
+  "state_transactions": {
+    "CA": {
+      "state_name": "California",
+      "state_volume": 1000000.00,
+      "state_transaction_count": 2000,
+      "money_transmission_volume": 900000.00,
+      "money_transmission_count": 1800,
+      "check_cashing_volume": 60000.00,
+      "check_cashing_count": 120,
+      "money_order_volume": 40000.00,
+      "money_order_count": 80
+    },
+    "NY": {
+      "state_name": "New York",
+      "state_volume": 800000.00,
+      "state_transaction_count": 1500,
+      "money_transmission_volume": 720000.00,
+      "money_transmission_count": 1350,
+      "check_cashing_volume": 48000.00,
+      "check_cashing_count": 90,
+      "money_order_volume": 32000.00,
+      "money_order_count": 60
+    },
+    "TX": {
+      "state_name": "Texas",
+      "state_volume": 600000.00,
+      "state_transaction_count": 1200,
+      "money_transmission_volume": 540000.00,
+      "money_transmission_count": 1080,
+      "check_cashing_volume": 36000.00,
+      "check_cashing_count": 72,
+      "money_order_volume": 24000.00,
+      "money_order_count": 48
+    }
+  },
+  "permissible_investments": {
+    "total_permissible_investments": 750000.00,
+    "cash_and_cash_equivalents": 300000.00,
+    "securities": 450000.00,
+    "investment_categories": [
+      {
+        "type": "Cash",
+        "amount": 300000.00,
+        "description": "Cash on hand and in banks"
+      },
+      {
+        "type": "Securities",
+        "amount": 450000.00,
+        "description": "Government and corporate securities"
+      }
+    ]
+  },
+  "destination_country_detail": {
+    "total_foreign_volume": 500000.00,
+    "total_foreign_count": 2500,
+    "countries": [
+      {
+        "country_code": "CA",
+        "country_name": "Canada",
+        "transaction_volume": 200000.00,
+        "transaction_count": 1000,
+        "money_transmission_volume": 180000.00,
+        "money_transmission_count": 900,
+        "check_cashing_volume": 12000.00,
+        "check_cashing_count": 60,
+        "money_order_volume": 8000.00,
+        "money_order_count": 40
+      },
+      {
+        "country_code": "GB",
+        "country_name": "United Kingdom",
+        "transaction_volume": 150000.00,
+        "transaction_count": 750,
+        "money_transmission_volume": 135000.00,
+        "money_transmission_count": 675,
+        "check_cashing_volume": 9000.00,
+        "check_cashing_count": 45,
+        "money_order_volume": 6000.00,
+        "money_order_count": 30
+      }
+    ]
+  },
+  "notes": {
+    "data_source": "Shopify internal systems",
+    "extraction_method": "Automated quarterly report",
+    "last_updated": "2025-01-15",
+    "data_quality": "Verified and reconciled",
+    "compliance_notes": "All data meets NMLS reporting requirements for Q1 2025"
+  }
+}

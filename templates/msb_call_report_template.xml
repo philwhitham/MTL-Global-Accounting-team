@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 
+MSB Call Report XML Template
+Based on NMLS MSB Call Report XML Upload Specifications v4
+Form Version: 2024.8
+-->
+<MSBCallReport xmlns="http://www.nmls.org/msbcr" 
+               FormVersion="2024.8"
+               CompanyName="Shopify Inc."
+               CompanyID="SHOPIFY001"
+               GenerationDate="2025-01-15">
+    
+    <!-- Reporting Period Information -->
+    <ReportingPeriod Quarter="Q1" Year="2025"/>
+    
+    <!-- Section I: Financial Condition Report -->
+    <FinancialCondition>
+        <!-- Total Assets -->
+        <TotalAssets>1000000.00</TotalAssets>
+        
+        <!-- Total Liabilities -->
+        <TotalLiabilities>500000.00</TotalLiabilities>
+        
+        <!-- Net Worth -->
+        <NetWorth>500000.00</NetWorth>
+        
+        <!-- Additional financial condition fields will be added based on specifications -->
+    </FinancialCondition>
+    
+    <!-- Section II(a): Company-wide Transactions Detail -->
+    <CompanyTransactions>
+        <!-- Total Transaction Volume -->
+        <TotalVolume>5000000.00</TotalVolume>
+        
+        <!-- Total Transaction Count -->
+        <TransactionCount>10000</TransactionCount>
+        
+        <!-- Additional company transaction fields will be added based on specifications -->
+    </CompanyTransactions>
+    
+    <!-- Section II(b): State Transaction Detail -->
+    <StateTransactions>
+        <!-- Example for California -->
+        <State StateCode="CA">
+            <StateVolume>1000000.00</StateVolume>
+            <StateTransactionCount>2000</StateTransactionCount>
+            <!-- Additional state-specific fields will be added based on specifications -->
+        </State>
+        
+        <!-- Example for New York -->
+        <State StateCode="NY">
+            <StateVolume>800000.00</StateVolume>
+            <StateTransactionCount>1500</StateTransactionCount>
+            <!-- Additional state-specific fields will be added based on specifications -->
+        </State>
+        
+        <!-- Additional states will be added based on Shopify's licensing -->
+    </StateTransactions>
+    
+    <!-- Section III: Permissible Investments Report -->
+    <PermissibleInvestments>
+        <!-- Total Permissible Investments -->
+        <TotalPermissibleInvestments>750000.00</TotalPermissibleInvestments>
+        
+        <!-- Investment Categories will be added based on specifications -->
+        <InvestmentCategory Type="Cash">
+            <Amount>300000.00</Amount>
+        </InvestmentCategory>
+        
+        <InvestmentCategory Type="Securities">
+            <Amount>450000.00</Amount>
+        </InvestmentCategory>
+        
+        <!-- Additional investment categories will be added based on specifications -->
+    </PermissibleInvestments>
+    
+    <!-- Section IV(a) and IV(b): Destination Country Detail (Q4 Only) -->
+    <!-- This section is only included in Q4 reports -->
+    <!--
+    <DestinationCountryDetail>
+        <Country Code="CA">
+            <TransactionVolume>100000.00</TransactionVolume>
+            <TransactionCount>500</TransactionCount>
+        </Country>
+        
+        <Country Code="GB">
+            <TransactionVolume>75000.00</TransactionVolume>
+            <TransactionCount>300</TransactionCount>
+        </Country>
+    </DestinationCountryDetail>
+    -->
+    
+</MSBCallReport>

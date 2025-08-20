@@ -1,0 +1,800 @@
+1  Revision Date: 10/2 /2024 
+  
+   
+Nationwide Multistate  Licensing System & 
+Registry  
+MSB Call Reports  
+ 
+XML Specification  
+Release 2024.8 
+ 
+  
+ 
+    
+ 
+   
+ 
+  
+
+2  Revision Date: 10/2 /2024 
+  
+ 
+Change Log  
+Date  Description  Release  
+12/23/2016 Initial draft  2017.1  
+1/4/2017  Included sample with all MSBCR sections  2017.1  
+2/23/2017  Added a clarification about XML behavior on decimal fields.  2017.1  
+03/08/2017  Removed references to Sections A -C 2017.1  
+03/27/2017  • The system require s the user to manually  input  decimals within  percentage 
+fields. Removed the following statement  from Section 3.3 Upload 
+Considerations : 
+For percentage fields entered without a decimal, XML will place the decimal before the last two 
+digits Example, a value entered as “8445” will be input into the system as “84.45”  
+• Updated XSD and sample XML files in Section 5 . 
+• Added an example for the “hundredth” datatype to  Section 4.5.2 Schema 
+Validation Notes : 
+Example, for the “hundredth” datatype, at least one digit is required before the decimal, and 
+exactly two digits are required after the decimal.  2017.1  
+07/07/2017  • Added rules around TD -A and TD -B list -based sections processing to  
+Section 4. 6.2.  
+• Updated XSD and XML sample for Version 2 MSBCR  
+• Added validation message #9 to Section 4. 5.1. 2017.3  
+07/17/2017  • Updated XSD for Version 1 MSBCR (Table 7)  
+• Removed Q4 as a valid value.   
+• Removed TD-A and TD-B as valid sections.  
+• Added a validation #10 - Table 5 2017.3  
+8/7/2017  • Updated release notes Section 2.2. 
+• Record ID will no longer be used as the key to update data via XML upload. 
+Updated Section 4.6.2 2017.3  
+12/1/2022  • Updated release notes.  
+• Updated list of Form Versions  
+• Adding missing information for TD -A and TD -B components  2023.3  
+1/30/2024  • Updated release notes.  
+• Updated list of Form Versions  2023.4  
+10/2/2024  • Updated release notes.  
+• Updated list of Form Versions  2024.8  
+ 
+  
+
+3  Revision Date: 10/2 /2024 
+ 1 Overview  
+ 
+As of  Release 2017.1 , companies have the ability to  create, manage, and submit Money  Services Business  
+Call Reports (M SBCR)  within NMLS  through submission of an MSBCR filing. An MSBCR filing can be 
+created and maintained manually within NMLS or through an upload of an XML file to NMLS.  
+The upload feature will allow companies to streamline the filing process for MSB  Call Reports by extracting 
+information from  their own internal systems and providing it to NMLS. An XML upload may be used in order 
+to create an initial MSBCR filing, change information on a pending MSBCR filing or amend information on a 
+previously -submitted MSBCR filing.  
+This document provides the specification for the XML file in support of creating and updating an MSBCR filing. Note that this document is not intended to provide an overview of MSB  Call Report  requirements . For 
+detailed information for MSB Call Reports, including an explanation of each field, please refer to the 
+NMLS 
+Resource Center . 
+ Audience  
+This document is intended to be used by technical staff responsible for building the XML file for an MSB  Call 
+Report. It is expected that readers of this document have existing knowledge of XML.  
+ Contact Information / Technical Issues  
+For questions or issues using the upload feature within NMLS , contact either the NMLS Call Center or your 
+Account Administrator . The NMLS Call Center will not provide support for creating or troubleshooting XML 
+files 
+ Prerequisites for Creating and Submitting MSBCR  Filings 
+A company must have an MSB license in NMLS in order to upload an XML file for an MSB  Call Report. The 
+user attempting to upload the file must have an NMLS user account with the appropriate MSBCR role. To 
+determine if your account has the appropriate role to perform XML file uploads for MSB Call Reports, contact 
+your Account Administrator.  
+2 Release Notes  
+ Release 201 7.1 
+1. New version 
+ Release 201 7.3 
+1. Added TD-A and TD-B sections.  
+ Release 20 23.3 
+1. Field changes to the Virtual Current sections of ST and TA components.  
+
+4  Revision Date: 10/2 /2024 
+ 
+ Release 20 23.4 
+1. Additional fields added to Permissable Investments  
+ Release 2024.8  
+2. Additional fields added to Permissable Investments and ST components.  
+ 
+3 Upload  File Process   
+ 
+ Using the Upload Process for Filing MSBCR s 
+An XML file can be uploaded to create or amend an MSBCR filing as described below: 
+  
+
+5  Revision Date: 10/2 /2024 
+ Table 1 – Creating and Amending via Uploads  
+Company needs 
+to… Performed when….  NMLS Action  
+Upload a new 
+MSBCR Filing  An MSBCR  filing does not exist (in 
+any status) for the Company for the 
+Reporting Period.  NMLS  will create a new MSBCR  filing 
+and any  FC, TA, ST and PI  component s 
+contained in the XML.  
+ 
+In addition, NMLS will create any  
+missing, but required components 
+automatically when creating an MSBCR filing for a quarterly period type (Q1, Q2, 
+Q3 or Q4).  
+Add one or more 
+components to a pending MSBCR 
+filing A pending MSBCR  filing exists (Filing 
+Status = Pending Initial or Pending Amendment) and the company wishes to add another component through an upload file. For instance, the company needs to add an ST for 
+a state that is not currently represented in the MSBCR filing.  
+No other changes are being reported 
+to existing components,  NMLS will add the MSBCR  component 
+to the MSBCR filing corresponding to 
+the same reporting period without altering the data in any existing component.  
+Edit one or more 
+components of a pending MSBCR 
+filing A pending MSBCR  filing exists (Filing 
+Status = Pending Initial or Pending Amendment)  for the Reporting Period 
+and the company wishes to update some or all of the data.  NMLS w ill update the pending  filing with 
+the information provided in the XML.  
+ 
+Any data elements not included in the XML file will be carried forward from the pending MSBCR filing. Any data 
+elements included in the XML file without a value will be treated as an 
+indication to clear the corresponding 
+value in the pending  MSBCR  filing.  
+Amend one or more 
+components of a 
+processed MSBCR 
+filing An MSBCR  filing exists in a 
+Processed status for the Reporting Period to be edited.  NMLS will create a  pending amendment 
+to the processed MSBCR filing from the 
+data elements provided in the XML file.  
+ Any data elements not present in the XML file will be carried forward from the processed MSBCR filing. Any data 
+elements included in the XML file without a value will be treated as an indication to clear the corresponding value in the pending MSBCR filing.  
+ 
+ 
+ The Upload Process (Step By Step ) 
+The following steps outline the process of uploading an XML file to NMLS in order to initiate creation of an 
+MSBCR filing. For additional information on using the Upload feature in NMLS, please refer to the NMLS 
+Resource Center . 
+ 
+1. Construct an XML file conforming to the required schema (.XSD file) for the MSBCR and Form 
+Version. For each F orm Version there will be separate schema for MSBCRs . See section 4.1 Form 
+Versions below for more information on Form Versions and selecting the correct XSD .  
+
+6  Revision Date: 10/2 /2024 
+  
+2. From the Upload MSBCR Filing page in NMLS, locate your XML file and choose the upload button.  
+ 
+3. Wait for NMLS to immediately perform  Level 1 validations (see Table 5  below in 4.5 Upload 
+Validations  section) against the XML file. If any Level 1 validations fail, the relevant message is 
+displayed and the file is not uploaded.   
+• The system will normally only display the first level 1 validation encountered since most 
+failures prevent further validation.  
+• If the file is not schema-compliant , the upload will fail but the message will not describe the 
+exact schema error.  
+ 
+4. If your file passes Level 1 validations , it will be queued for Level 2 validations (see Table 5  below in 
+4.5 Upload Validations  section)  and displayed on the MSBCR Upload File History page with a 
+status of “Upload Pending”.  
+• Level 2 validations generally occur within a few minutes . You can refresh the MSBCR 
+Upload File History page to watch for the status to be updated.  
+• If any of the Level 2 validations fail, the file is given a status of “Invalid” and a link is provided 
+to view the error  messages.  
+ 
+5. If the file passes Level 2 validations , the following actions are taken based on current  MSBCR filings:  
+• If you currently do not have any MSBCR filing (regardless of status) that matches the Year, 
+Period Type of your upload file, NMLS:  
+i. Creates a new MSBCR filing with a status of “Pending – Initial” . 
+ii. Adds all the data from your upload to the MSBCR filing.  
+• If you currently have an MSBCR filing in a status of “Pending-Initial” or “Pending-
+Amendment” that matches the Year, Period Type of your upload file, NMLS  merges the data 
+from the upload file with the data currently in the MSBCR filing according to the rule in the 
+4.6 Merging Rules section. 
+• If you currently have an MSBCR filing in a “Filing Processed” status  that matches the Year, 
+Period Type of your upload file, NMLS creates a revision of the processed MSBCR filing, 
+sets the status to “Pending-Amendment” and merges the data from the upload file with the 
+data currently in the filing according to the 4.6  Merging Rules. 
+ 
+IMPORTANT:  the upload process will not submit your MSBCR filing. You must manually run 
+completeness checks against each component and submit the filing in NMLS.  
+ 
+ Upload Considerations  
+When attempting to upload an XML file, the following should be considered:  
+1. XML f iles may only be uploaded during system hours. Visit the NMLS Resource Center for Hours of 
+Operation . 
+2. XML files will be processed in near real-time; except during periods of peak system usage, when 
+processing of uploaded files may be delayed.  
+3. While an upload is queued and before it has completed processing you will not be able to perform the 
+following actions on an MSBCR filing that matches the Year, Period Type of the upload:  
+a. Delete the MSBCR filing 
+b. Delete any component in the MSBCR filing 
+c. Submit the MSBCR filing 
+
+7  Revision Date: 10/2 /2024 
+ d. Upload another file for the same Year, Period Type of the pending upload  
+4. An XML file may contain data for only one Reporting Period.  
+5. The system requires the user to manually input  decimals within percentage fields  where previously it 
+had automatically input the decimal before the final two digits  of each entry . 
+4 MSBCR  Upload File  Validation and Structure  
+ 
+This section describes the rules for constructing a valid MSBCR Upload file. This includes both business 
+rules and data schema rules.  
+ Form Version s  
+Over time it becomes necessary to add/delete/change fields in the MSBCR form components . Such changes  
+are part of an NMLS release and require the introduction of a new MSBCR Form Version . This also 
+necessitates a new Schema file for validating your XML upload file in the new form version.   The Form 
+Version of the MSBCR form is set as the most recent Form Version active in NMLS when the MSBCR form is 
+initially created, regardless of the Reporting Period. Any MSBCR form which is pending submission when a 
+new Form Version is released or which is amended after a new Form Version is released will retain the 
+original Form Version. To understand further  impact s of Form Versioning on XML Schema validations see 
+section 4.3 XML Schema Validation .  
+ Selecting the Correct Form Version   
+Refer  to section 5 Associated Files  to determine the exact XSD schema file  and FormVersion to use.  
+Table 2 - Selecting the Correct Form Version for your Schema  
+Action  Form Version  
+I am creating a new MSBCR  filing.  An MSBCR  
+has never been submitted for this Reporting 
+Period and there is no pending MSBCR for this 
+Reporting Period.  Use the most curren t Form Version of the MSBCR . 
+I am updating  a pending MSBCR  that has 
+never been submitted but was created before 
+the Form Version change.  Use the Form Version that was originally used when 
+the MSBCR filing was created.  
+I am revising a previously -submitted MSBCR  
+filing.  Use the Form Version that was originally used for 
+that MSBCR filing. The Form Version of a submitted 
+MSBCR filing is displayed on the View MSBCR 
+Sections  <pending text document implementation>  
+page in the company’s composite record in NMLS.  
+The following table contains a summary of MSBCR Form Version changes:  
+Table 3 – Form Version Changes  
+ Release  Date of Release  Form Version  
+Release 2017.1  March 2017  v1 
+Release 2017.3  July 2017  v2 
+Release 2023.1  April 2023  v3 
+Release 2024.5  May 2024  v4 
+
+8  Revision Date: 10/2 /2024 
+ 
+ MSBCR  Filing Structure and Requirements  
+An MSBCR is comprised of one or more components, including a Financial Condition component (FC) 
+and/or a Transactions - Company wide (TA) component , one or more Transactions State-Specific  (ST) and a 
+Permissible Investments  (PI) component. The FC is comprised of the filing entity’s financial data at a MU1 
+level. An ST is the component of the MSBCR that gathers information regarding the filing entity’s 
+transactional activity at a state level. Each ST  includes data for a specific state. A single TA component must 
+always  be present, regardless of whether an ST component is required to be filed by the entity . The TA is not 
+state specific but captures information that is applicable across all states .  
+ XML Schema  Validation   
+Your XML file must conform to the XSD schema associated with the Form Version  of the MSBCR . Much of 
+the validation of the upload file occurs as part of XML schema validation. There are numerous tools available 
+for users to run their own schema validation on upload files before attempting to upload. Those tools will 
+provide user with specific messages on what schema restrictions have failed. NMLS will not provide these 
+specific messages . A file which does not conform to the correct schema definition for the filing will fail 
+validation rule #4 in Table 6 – Validation Rules and Messages below (see Upload Validations section) . 
+Note that each Form Version has its own schema definitions and any upload must conform to the correct 
+schema for the Form Version. An upload with the wrong Form Version information in the MSBCR Header tag 
+(see Table 4 – Filing Metadata and Allowed Values ) with cause error #13 in Table 6 – Validation Rules 
+and Messages below. An upload which contains fields that pertain to the wrong Form Version (where the 
+header tag is otherwise correct) will cause the Schema validation error #4 in Table 5 – Validation Rule s 
+and Messages below.  
+ Filing Metadata and Allowed Values  
+The XML file may contain full or partial data for an MSB  Call Report. T he XML file must include the following 
+metadata (header) information:  
+• The MSBCR header data element as shown in these examples: 
+ 
+MSBCR  Description  MSBCR  Header Tag  
+MSBCR  for 2023 Calendar 
+Quarter 1  <MSBCR year="20 23" periodType=" MSBCRQ1" formVersion=”v 3” 
+> 
+ 
+• At least one component (FC , TA, ST or PI ) header  data element as shown in the following examples:  
+Component 
+Type  Applicable Fo rm 
+Versions  Component Header Tag  
+FC All form versions  <Msbcrfc> 
+TA All form versions  <Msbcrta> 
+ST All form versions  <Msbcrst stateCode="RI">  
+PI All form versions  <Msbcrpi> 
+TD-A V2, V3 , V4 <Msbcrtda > 
+TD-B V2, V3 , V4 <Msbcrtdb stateCode="RI" > 
+ 
+The following table describes the allowed values for these data elements . Please see the schema and XML 
+examples associated with this document for the exact specification of the XML structure.  
+ 
+ 
+ 
+
+9  Revision Date: 10/2 /2024 
+  
+ 
+Table 4 – Filing Metadata and Allowed Values  
+Tag Attribute  Applicable 
+Form 
+Versions  Definition  Allowable Values  
+MSBCR year* All form 
+versions  The year for which the 
+MSBCR filing applies.  Any 4 -digit year for which an 
+MSBCR filing may be submitted.  
+MSBCRFILING periodTyp
+e* All form 
+versions  The period type for 
+the MSBCR filing. 
+This must be a 
+calendar quarter.  
+ 
+  
+Description  Value  
+Calendar  
+Quarter 1 MSB Q1 
+Calendar  
+Quarter 2 MSB Q2 
+Calendar  
+Quarter 3 MSB Q3 
+Calendar  
+Quarter 4 MSB Q4 
+MSBCRFILING formVersi
+on 
+ 
+ All form 
+versions  The form version of 
+the filing.   
+Form Version  Value  
+v1 v1 
+<Msbcrfc>  
+  All form 
+versions  The header tag for a 
+Financial Condition component. There are 
+no attributes for this 
+tag. N/A 
+<Msbcrta>  
+  All form 
+versions  The header tag for a 
+TA. There are no 
+attributes for this tag.  N/A 
+<Msbcrst>  stateCode  All form 
+versions  The ST represents 
+data for a state.  The two -letter postal code 
+abbreviation corresponding to the 
+state/territory.  
+<Msbcrpi>   All form 
+versions  The header tag for a 
+Permissible Investments component. There are 
+no attributes for this 
+tag. N/A 
+<Msbcrtda >  v2, v3, v4   
+<Msbcrtdb> stateCode  v2, v3 , v4  The two -letter postal code 
+abbreviation corresponding to the 
+state/territory.  
+* Data that together defines the Reporting Period. 
+ Upload Validation s 
+Two types of validations will be conducted on XML files:  
+1. Schema and metadata validation (Level 1) to ensure that the upload file matches the expected file 
+format . Level 1 validations are run when the file is first uploaded and the file will only upload if all Level 1 
+validations pass.  
+
+10  Revision Date: 10/ 2/2024 
+ 2. Data content validation (Level 2) to ensure that the upload file represents an appropriate type of MSB  
+Call Report for the company . Level 2 validations are run after the file is successfully uploaded. If the file 
+fails a Level 2 upload the status is set to “Invalid” and the data is not merged into a filing.  
+ Validation Rules and Messages  
+Table 5 – Validation Rules and Messages  
+
+11  Revision Date: 10/2 /2024 
+ # Form 
+Version  Rule  Validation 
+Level  Message  
+1 All The file name must have an “.xml” extension.  
+ 1 FILE NOT UPLOADED - The 
+file must be in XML format 
+with an .xml file extension.  
+2 All The length of the file name (including the 
+extension) must not be over 50 characters.  1 FILE NOT UPLOADED - The 
+file name must not exceed 50 
+characters.  
+3 All The size of the file must not be greater than  
+8 MB. 1 FILE NOT UPLOADED - The 
+file exceeds 8 MB size limit.  
+4 All All XML schema validations must pass . Note 
+that for each Form Version there are 
+separate schema files (.XSD). See section 
+4.5.2 Schema Validation Notes in this 
+document for more information.  
+ 1 FILE NOT UPLOADED - 
+Your file does not conform to a valid MSBCR filing 
+schema. Please check your file against the 
+MSBCR XML 
+Specification  av ailable on the 
+NMLS Resource Center .   
+5 All There must not already be an upload  for the 
+company with the same year ( year) , period 
+type (periodType) with a status  of  ‘New’, 
+"Split Processed’,  ‘Processing’, or "Failed 
+Processing".  1 FILE NOT UPLOADED – 
+There is an MSBCR Upload file in an Upload Pending status for the Year, Period Type indicated in this file.  
+6 All The upload  must include at least one 
+component required: At least contain one 
+FC, TA, ST or PI component.  1 FILE NOT UPLOADED - The 
+upload must include at least one section required for the Period Type.  
+7 All Year must be a year corresponding to the 
+last 8 calendar quarters.  1 You cannot create an 
+MSBCR filing for a period 
+more than 24 months ago.  
+8 All The file must contain “well -formed” XML.  1 FILE NOT UPLOADED - The 
+file must contain well-formed 
+XML.  
+9 All The file contains null or hexadecimal 
+characters  1 FILE NOT UPLOADED - The 
+file contains null or 
+hexadecimal characters.  
+-<List of instances of bad 
+characters> - 
+10 All The TD -A or TD -B section is only permitted 
+on a Q4 filing  1 FILE NOT UPLOADED - The 
+upload cannot include a TD-A or TD -B section for the 
+period that was indicated  
+11 All The upload can only contain one ST 
+component per state.  2 The upload ~must contain 
+only one ST component per 
+state.  
+12 V2, V3 , 
+V4 The country code entered on the TD -A 
+component (<TDA> tag) is invalid. See 
+Appendix: Valid Country Codes  below.  2 The country code entered on 
+the TD-A section ( <value 
+entered> ) is invalid.  
+13 V2, V3 , 
+V4 The country code entered on the TD -B 
+component (<TDB> tag) is invalid. See 
+Appendix: Valid Country Codes  below.  2 The country code entered on 
+the TD-B section ( <value 
+entered> ) is invalid.  
+ 
+
+12  Revision Date: 10/ 2/2024 
+ If all conditions have been met, t he MSBCR  filing will be created (or amended) based on data provided in the 
+XML file. If any condition fails, the user must upload a new XML file that satisfies all conditions . 
+ Schema Validation Notes  
+Users should use the associated XSD files to understand the data requirements and ensure that their files 
+pass this validation. The following notes are not intended to be comprehensive but should be helpful in 
+understanding common schema validation failures.  
+1. Any elements included in the upload that are not defined in the schema will cause the file to fail 
+schema validation (#4). This includes elements from the wrong Form Version.  
+2. Empty numeric elements (e.g. < FC010></FC010>) will cause a schema validation failure. Empty 
+string elements will be accepted and will cause any data in the corresponding filing to be nulled out.  
+3. The Form Version of the upload must match the Form Version required by the MSBCR Filing.  
+4. Most of the fields within the filing are restricted by custom data types . These data types are defined 
+at the end of the XSD files and define such things as number of digits allowed before and after the 
+decimal, minimum values, string length, allowed value lists, etc.  
+Example, for the “hundredth” datatype, at least one digit is required before the decimal, and exactly two digits are required after the decimal.  
+5. Note that all container nodes include the <xs:sequence> element which specifies that the child 
+elements must appear in the sequence specified in the XSD . 
+6. The Validation # value in Table 6 is for reference only and does not signify the order in which 
+validations are performed. Understanding the following sequence of Level 1 Validation steps, 
+however, may help in your debugging efforts . In each case processing stops upon the first validation 
+failure reached:  
+Table 6 – Validation Sequence  
+Sequence  Validation #s System Processing  
+1 1, 2, 3  The system examines the file’s properties and determines whether 
+it should attempt to load the file.  
+2 8 The system attempts to load the file as XML . If it does not contain 
+well-formed XML processing ends and the validation message is 
+displayed. The problem with the file could be anything from a file 
+containing binary data to an XML file missing an end tag.  
+3 4 The system validates the XML schema against the proper XSD.  
+5 * The system performs  the remaining Level 1 validations.  
+ Merging Rules  
+Merging refers to the process of NMLS updating an existing MSBCR  filing with data from a new upload file. 
+The rules used to merge data are explained further in this section.  
+ Non List Data  
+The following rules are used to merge data from an upload file with an existing MSBCR  filing in the system:  
+1. Data elements within the existing filing that don’t have a matching data element in the upload remain 
+unchanged.   
+2. Data elements in the XML upload which are valid for the filing and form type but do not exist in the 
+current filing are inserted into the filing.  
+3. Data elements in the XML upload which match data elements within the existing filing replace the data within the filing.  
+4. Data is replaced at the lowest level in the XML path. Only “leaf” nodes are affected.  
+
+13  Revision Date: 10/2 /2024 
+ # Existing Filing Data  Upload Data  Merge Result  
+1, 2 <Assets> 
+   <FC10>1234</FC10> 
+   <FC20>43</FC20> 
+</Assets>  <Assets> 
+   <FC140>4321</FC140> 
+   <FC150>232</FC150> 
+<Assets> 
+ <Assets> 
+   <FC10>1234</FC10>    <FC20>43</FC20> 
+   <FC140>4321</FC140> 
+   <FC150>232</FC150> 
+</Assets> 
+3 <Assets> 
+   <FC10>0 </FC10> 
+   <FC20>0</FC20> 
+</Assets> <Assets> 
+   <FC10> 123</FC10> 
+</Assets> <Assets> 
+   <FC10> 123</FC10> 
+   <FC20>0</FC20> 
+</Assets> 
+4 <Assets> 
+   <FC10>1234</FC10> 
+   <FC20>43</FC20> 
+</Assets> <Assets> 
+</Assets> <Assets> 
+   <FC10>1234</FC10>    <FC20>43</FC20> 
+</Assets> 
+Note that the  empty section on upload 
+does not affect the filing data. Only leaf 
+notes are compared.  
+ List Data  
+The following sections  contains list data:  
+Component  Section  Heading  
+TD-A Transactions Destination - 
+Company -wide Transactions Destination - 
+Company -wide 
+TD-B  State Transactions Destination  State Transactions Destination  
+The system merges upload data in these sections based on matching the country code as the unique 
+identifier . Records where the country code matches will have the count and amount values overwritten. 
+5 Appendix: Valid Country Codes  
+ 
+Country 
+Code Name  
+AF Afghanistan  
+AX Aland Islands  
+AL Albania  
+DZ Algeria  
+AS American Samoa  
+AD Andorra  
+AO Angola  
+AI Anguilla  
+AQ Antarctica  
+AG Antigua and Barbuda  
+AR Argentina  
+AM Armenia  
+AW Aruba  
+AU Australia  
+AT Austria  
+AZ Azerbaijan  
+BS Bahamas (the)  
+BH Bahrain  
+BD Bangladesh  
+BB Barbados  
+BY Belarus  
+BE Belgium  
+BZ Belize  
+BJ Benin  
+
+14  Revision Date: 10/ 2/2024 
+ BM Bermuda  
+BT Bhutan  
+BO Bolivia (Plurinational State of)  
+BQ Bonaire, Sint Eustatius and Saba  
+BA Bosnia and Herzegovina  
+BW Botswana  
+BV Bouvet Island  
+BR Brazil  
+IO British Indian Ocean Territory (the)  
+BN Brunei Darussalam  
+BG Bulgaria  
+BF Burkina Faso  
+BI Burundi  
+CV Cabo Verde  
+KH Cambodia  
+CM Cameroon  
+CA Canada  
+KY Cayman Islands (the)  
+CF Central African Republic (the)  
+TD Chad  
+CL Chile  
+CN China  
+CX Christmas Island  
+CC Cocos (Keeling) Islands (the)  
+CO Colombia  
+KM Comoros (the)  
+CD Congo (the Democratic Republic of the)  
+CG Congo (the)  
+CK Cook Islands (the) 
+CR Costa Rica  
+CI Cote d'Ivoire  
+HR Croatia  
+CU Cuba  
+CW Curacao  
+CY Cyprus  
+CZ Czechia  
+DK Denmark  
+DJ Djibouti  
+DM Dominica  
+DO Dominican Republic (the)  
+EC Ecuador  
+EG Egypt  
+SV El Salvador  
+GQ Equatorial Guinea  
+ER Eritrea  
+EE Estonia  
+SZ Eswatini  
+ET Ethiopia  
+FK Falkland Islands (the) [Malvinas]  
+FO Faroe Islands (the)  
+FJ Fiji 
+FI Finland  
+FR France  
+GF French Guiana  
+PF French Polynesia  
+
+15  Revision Date: 10/ 2/2024 
+ TF French Southern Territories (the)  
+GA Gabon  
+GM Gambia (the)  
+GE Georgia  
+DE Germany  
+GH Ghana  
+GI Gibraltar  
+GR Greece  
+GL Greenland  
+GD Grenada  
+GP Guadeloupe  
+GU Guam  
+GT Guatemala  
+GG Guernsey  
+GN Guinea  
+GW Guinea -Bissau  
+GY Guyana  
+HT Haiti 
+HM Heard Island and McDonald Islands  
+VA Holy See (the)  
+HN Honduras  
+HK Hong Kong  
+HU Hungary  
+IS Iceland  
+IN India  
+ID Indonesia  
+IR Iran (Islamic Republic of)  
+IQ Iraq 
+IE Ireland  
+IM Isle of Man  
+IL Israel  
+IT Italy 
+JM Jamaica  
+JP Japan  
+JE Jersey  
+JO Jordan  
+KZ Kazakhstan  
+KE Kenya  
+KI Kiribati  
+KP Korea (the Democratic People's Republic of)  
+KR Korea (the Republic of)  
+KW Kuwait  
+KG Kyrgyzstan  
+LA Lao People's Democratic Republic (the)  
+LV Latvia  
+LB Lebanon  
+LS Lesotho  
+LR Liberia  
+LY Libya  
+LI Liechtenstein  
+LT Lithuania  
+LU Luxembourg  
+MO Macao  
+MG Madagascar  
+MW Malawi  
+
+16  Revision Date: 10/ 2/2024 
+ MY Malaysia  
+MV Maldives  
+ML Mali 
+MT Malta  
+MH Marshall Islands (the)  
+MQ Martinique  
+MR Mauritania  
+MU Mauritius  
+YT Mayotte  
+MX Mexico  
+FM Micronesia (Federated States of)  
+MD Moldova (the Republic of)  
+MC Monaco  
+MN Mongolia  
+ME Montenegro  
+MS Montserrat  
+MA Morocco  
+MZ Mozambique  
+MM Myanmar  
+NA Namibia  
+NR Nauru  
+NP Nepal  
+NL Netherlands (the)  
+NC New Caledonia  
+NZ New Zealand  
+NI Nicaragua  
+NE Niger (the)  
+NG Nigeria  
+NU Niue 
+NF Norfolk Island  
+MK North Macedonia  
+MP Northern Mariana Islands (the)  
+NO Norway  
+OM Oman  
+PK Pakistan  
+PW Palau  
+PS Palestine, State of  
+PA Panama  
+PG Papua New Guinea  
+PY Paraguay  
+PE Peru  
+PH Philippines (the)  
+PN Pitcairn  
+PL Poland  
+PT Portugal  
+PR Puerto Rico  
+QA Qatar  
+RE Reunion  
+RO Romania  
+RU Russian Federation (the)  
+RW Rwanda  
+BL Saint Barthelemy  
+SH Saint Helena, Ascension and Tristan da Cunha  
+KN Saint Kitts and Nevis  
+LC Saint Lucia  
+
+17  Revision Date: 10/ 2/2024 
+ MF Saint Martin (French part)  
+PM Saint Pierre and Miquelon  
+VC Saint Vincent and the Grenadines  
+WS Samoa  
+SM San Marino  
+ST Sao Tome and Principe  
+SA Saudi Arabia  
+SN Senegal  
+RS Serbia  
+SC Seychelles  
+SL Sierra Leone  
+SG Singapore  
+SX Sint Maarten (Dutch part)  
+SK Slovakia  
+SI Slovenia  
+SB Solomon Islands  
+SO Somalia  
+ZA South Africa  
+GS South Georgia and the South Sandwich Islands  
+SS South Sudan  
+ES Spain  
+LK Sri Lanka  
+SD Sudan (the)  
+SR Suriname  
+SJ Svalbard and Jan Mayen  
+SE Sweden  
+CH Switzerland  
+SY Syrian Arab Republic (the)  
+TW Taiwan (Province of China)  
+TJ Tajikistan  
+TZ Tanzania, the United Republic of  
+TH Thailand  
+TL Timor -Leste  
+TG Togo  
+TK Tokelau  
+TO Tonga  
+TT Trinidad and Tobago  
+TN Tunisia  
+TR Turkey  
+TM Turkmenistan  
+TC Turks and Caicos Islands (the)  
+TV Tuvalu  
+UG Uganda  
+UA Ukraine  
+AE United Arab Emirates (the)  
+GB United Kingdom of Great Britain and Northern 
+Ireland (the)  
+UM United States Minor Outlying Islands (the)  
+UY Uruguay  
+UZ Uzbekistan  
+VU Vanuatu  
+VE Venezuela (Bolivarian Republic of)  
+VN Viet Nam  
+VG Virgin Islands (British)  
+VI Virgin Islands (U.S.)  
+
+18  Revision Date: 10/ 2/2024 
+ WF Wallis and Futuna  
+EH Western Sahara*  
+YE Yemen  
+ZM Zambia  
+ZW Zimbabwe  
+ 
+
