@@ -1,26 +1,33 @@
 ---
 name: MSB Call Report Approval
 about: Track stakeholder approvals for quarterly MSB Call Report submission
-title: '[APPROVAL] Q4 2025 MSB Call Report'
-labels: approval, msb-report, q4-2025
+title: '[APPROVAL] [QUARTER] [YEAR] MSB Call Report'
+labels: approval, msb-report
 assignees: ''
 ---
 
 ## 📋 MSB Call Report Approval Request
 
-**Report Period**: Q4 2025 (October 1 - December 31, 2025)  
-**Due Date**: February 15, 2026  
+**Report Period**: [QUARTER] [YEAR] ([START DATE] - [END DATE])  
+**Due Date**: [DUE DATE]  
 **NMLS ID**: 2689562  
 
 ---
 
 ## 📁 Files for Review
 
-- **XML Report**: [`SHOPIFY_FS_Q4_2025_MSB_REPORT.xml`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/SHOPIFY_FS_Q4_2025_MSB_REPORT.xml)
-- **Summary**: [`Q4_2025_REPORT_SUMMARY.md`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/Q4_2025_REPORT_SUMMARY.md)
-- **Validation**: [`PRE_SUBMISSION_VALIDATION.md`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/PRE_SUBMISSION_VALIDATION.md)
-- **Timeline**: [`SUBMISSION_TIMELINE.md`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/SUBMISSION_TIMELINE.md)
-- **Approvals**: [`APPROVALS.md`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/APPROVALS.md)
+**Location**: `MSB Call Reports/[YEAR]/[QUARTER]/`
+
+Navigate to the folder above and review:
+- **XML Report**: `SHOPIFY_FS_[QUARTER]_[YEAR]_MSB_REPORT.xml`
+- **Summary**: `[QUARTER]_[YEAR]_REPORT_SUMMARY.md`
+- **Validation**: `PRE_SUBMISSION_VALIDATION.md`
+- **Timeline**: `SUBMISSION_TIMELINE.md`
+- **Approvals**: `APPROVALS.md`
+
+**Quick Links** (update these when creating the issue):
+- [Navigate to Report Folder](https://github.com/philwhitham/MTL-Global-Accounting-team/tree/main/MSB%20Call%20Reports)
+- [View All MSB Reports](https://github.com/philwhitham/MTL-Global-Accounting-team/tree/main/MSB%20Call%20Reports)
 
 ---
 
@@ -84,10 +91,16 @@ assignees: ''
 
 ## 📅 Timeline
 
-- **Target Review Completion**: January 28, 2026
-- **Final Approval**: February 2, 2026
-- **Target Submission Date**: February 6, 2026 (9 days before deadline)
-- **NMLS Submission Deadline**: February 15, 2026
+- **Target Review Completion**: [DATE]
+- **Final Approval**: [DATE]
+- **Target Submission Date**: [DATE] (9 days before deadline)
+- **NMLS Submission Deadline**: [DEADLINE DATE]
+
+**Quarterly Deadlines**:
+- Q1 (Jan-Mar): Due May 15
+- Q2 (Apr-Jun): Due August 15
+- Q3 (Jul-Sep): Due November 15
+- Q4 (Oct-Dec): Due February 15 (following year)
 
 ---
 
