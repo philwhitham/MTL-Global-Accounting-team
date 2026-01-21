@@ -28,7 +28,7 @@ The MSB Call Report aims to:
 
 ### Data
 - `data/shopify_transactions/` - Sample Shopify transaction data structure
-- `data/output/` - Generated XML files
+- `MSB Call Reports/` - Generated MSB Call Report XML files organized by year/quarter
 
 ## MSB Call Report Requirements
 
@@ -73,7 +73,7 @@ pip install -r requirements.txt
 ### Usage
 1. Extract specifications: `python tools/pdf_reader.py input_pdfs/MSB\ Call\ Report\ XML\ Upload\ Specifications\ v4.pdf`
 2. Generate XML: `python tools/xml_generator.py --quarter Q1 --year 2025`
-3. Validate XML: `python tools/validation.py --file output/msb_report_q1_2025.xml`
+3. Validate XML: `python tools/validation.py --file "MSB Call Reports/2025/Q1/msb_report_q1_2025.xml"`
 
 ## Development Status
 - [x] PDF specifications extracted

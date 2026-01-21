@@ -83,12 +83,12 @@ Successfully analyzed MSB Call Report requirements, mapped Shopify Financial Ser
 
 ### **Output Files**
 
-6. **`output/SHOPIFY_FS_Q4_2025_MSB_REPORT.xml`**
+6. **`MSB Call Reports/2025/Q4/SHOPIFY_FS_Q4_2025_MSB_REPORT.xml`**
    - Complete MSB Call Report for Q4 2025
    - Ready for internal review and NMLS submission
    - All sections properly structured
 
-7. **`output/Q4_2025_REPORT_SUMMARY.md`**
+7. **`MSB Call Reports/2025/Q4/Q4_2025_REPORT_SUMMARY.md`**
    - Human-readable report summary
    - Financial statement breakdown
    - Pre-submission checklist

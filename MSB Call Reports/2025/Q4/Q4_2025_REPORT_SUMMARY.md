@@ -172,7 +172,7 @@
 1. **`SHOPIFY_FS_Q4_2025_MSB_REPORT.xml`** - Final XML for submission
 2. **`Q4_2025_REPORT_SUMMARY.md`** - This summary document
 
-**Location**: `/Users/philwhitham/MTL-Global-Accounting-team/output/`
+**Location**: `/Users/philwhitham/MTL-Global-Accounting-team/MSB Call Reports/2025/Q4/`
 
 ---
 
