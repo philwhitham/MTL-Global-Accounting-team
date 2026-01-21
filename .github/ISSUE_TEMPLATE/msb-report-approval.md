@@ -23,7 +23,6 @@ assignees: ''
 - **Summary**: [`Q4_2025_REPORT_SUMMARY.md`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/Q4_2025_REPORT_SUMMARY.md)
 - **Validation**: [`PRE_SUBMISSION_VALIDATION.md`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/PRE_SUBMISSION_VALIDATION.md)
 - **Timeline**: [`SUBMISSION_TIMELINE.md`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/SUBMISSION_TIMELINE.md)
-- **Approvals**: [`APPROVALS.md`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/APPROVALS.md)
 
 ---
 
@@ -33,8 +32,6 @@ assignees: ''
 - [ ] Balance Sheet amounts verified against NetSuite
 - [ ] Income Statement amounts verified against NetSuite
 - [ ] All financial data is accurate
-- [ ] **Approved by**: ______________________ (Name)
-- [ ] **Date**: ______________________ 
 
 **Comments**:
 <!-- Finance team: Add any comments or questions here -->
@@ -45,8 +42,6 @@ assignees: ''
 - [ ] Explanatory notes are accurate
 - [ ] Regulatory requirements met
 - [ ] Pre-operational status properly disclosed
-- [ ] **Approved by**: ______________________ (Name)
-- [ ] **Date**: ______________________ 
 
 **Comments**:
 <!-- Legal/Compliance: Add any comments or questions here -->
@@ -56,8 +51,6 @@ assignees: ''
 - [ ] All stakeholder reviews complete
 - [ ] No outstanding issues or corrections needed
 - [ ] Authorized for NMLS submission
-- [ ] **Approved by**: ______________________ (Name)
-- [ ] **Date**: ______________________ 
 
 **Comments**:
 <!-- Final approver: Add any comments here -->
@@ -98,9 +91,8 @@ assignees: ''
 
 1. Review the files linked above
 2. Check the boxes in your section when complete
-3. Fill in your name and date
-4. Add any comments in your section
-5. Tag @philwhitham when your review is complete
+3. Add a comment with your approval (e.g., "Finance review complete - all amounts verified ✅")
+4. Tag @philwhitham when your review is complete
 
 ---
 
