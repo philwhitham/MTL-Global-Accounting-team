@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MsbcrFiling year="2025" formVersion="v4" periodType="MSBQ4" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Msbcrfc>	
+		<Assets>
+			<FC10>2000000</FC10>
+			<FC120>0</FC120>
+			<FC130>0</FC130>
+			<FC140>0</FC140>
+			<FC150>0</FC150>
+		</Assets>
+		<LiabilitiesAndEquity>
+			<FC170>0</FC170>
+			<FC180>9128</FC180>
+			<FC190>0</FC190>
+			<FC200>0</FC200>
+			<FC210>0</FC210>
+			<FC220>0</FC220>
+			<FC230>0</FC230>
+			<FC240>23460</FC240>
+			<FC260>0</FC260>
+			<FC270>0</FC270>
+			<FC290>0</FC290>
+			<FC300>0</FC300>
+			<FC310>10</FC310>
+			<FC320>0</FC320>
+			<FC330>0</FC330>
+			<FC340>1999990</FC340>
+			<FC360>-32588</FC360>
+			<FC370>0</FC370>
+			<FC380>0</FC380>
+		</LiabilitiesAndEquity>
+		<IncomeStatement>
+			<FC410>0</FC410>
+			<FC420>0</FC420>
+			<FC430>0</FC430>
+			<FC440>0</FC440>
+			<FC450>0</FC450>
+			<FC460>0</FC460>
+			<FC470>0</FC470>
+			<FC480>0</FC480>
+			<FC500>0</FC500>
+			<FC510>0</FC510>
+			<FC520>7128</FC520>
+			<FC530>0</FC530>
+			<FC540>0</FC540>
+			<FC550>0</FC550>
+			<FC560>0</FC560>
+			<FC570>0</FC570>
+			<FC580>23460</FC580>
+			<FC590>0</FC590>
+			<FC620>0</FC620>
+			<FC640>0</FC640>
+			<FC650>0</FC650>
+			<FC670>0</FC670>
+		</IncomeStatement>
+		<ExplanatoryNotesSection>
+			<FCNOTE_1>Shopify Financial Services Inc. was formed on December 18, 2024. The company obtained MSB licenses in Pennsylvania (Nov 7, 2025), Arizona (Dec 4, 2025), and Alabama (Dec 12, 2025). As of Q4 2025, the company is pre-operational with no stored value transactions. The balance sheet reflects initial capitalization from parent company and minimal operating expenses.</FCNOTE_1>
+		</ExplanatoryNotesSection>
+	</Msbcrfc>	
+	<Msbcrta>
+		<TransactionsCompanyWideSection>
+			<TA90>0</TA90>
+			<TA100>0</TA100>
+		</TransactionsCompanyWideSection>
+		<ExplanatoryNotesSection>
+			<TANOTE_1>No stored value transactions during Q4 2025. Company is pre-operational pending completion of state licensing and product launch.</TANOTE_1>
+		</ExplanatoryNotesSection>
+	</Msbcrta>
+	<Msbcrst stateCode="PA">
+		<TransactionsStateSpecificSection>
+			<ST90>0</ST90>
+			<ST100>0</ST100>
+		</TransactionsStateSpecificSection>
+		<ExplanatoryNotesSection>
+			<STNOTE_1>Pennsylvania license effective November 7, 2025. No stored value transactions during Q4 2025.</STNOTE_1>
+		</ExplanatoryNotesSection>
+	</Msbcrst>
+	<Msbcrst stateCode="AZ">
+		<TransactionsStateSpecificSection>
+			<ST90>0</ST90>
+			<ST100>0</ST100>
+		</TransactionsStateSpecificSection>
+		<ExplanatoryNotesSection>
+			<STNOTE_1>Arizona license effective December 4, 2025. No stored value transactions during Q4 2025.</STNOTE_1>
+		</ExplanatoryNotesSection>
+	</Msbcrst>
+	<Msbcrst stateCode="AL">
+		<TransactionsStateSpecificSection>
+			<ST90>0</ST90>
+			<ST100>0</ST100>
+		</TransactionsStateSpecificSection>
+		<ExplanatoryNotesSection>
+			<STNOTE_1>Alabama license effective December 12, 2025. No stored value transactions during Q4 2025.</STNOTE_1>
+		</ExplanatoryNotesSection>
+	</Msbcrst>
+	<Msbcrpi>
+		<PermissibleInvestmentsSection>
+			<PI10>2000000</PI10>
+			<PI20>0</PI20>
+			<PI21>0</PI21>
+			<PI30>0</PI30>
+			<PI31>0</PI31>
+			<PI32>0</PI32>
+			<PI50>0</PI50>
+			<PI60>0</PI60>
+			<PI61>0</PI61>
+			<PI62>0</PI62>
+			<PI70>0</PI70>
+			<PI71>0</PI71>
+			<PI72>0</PI72>
+			<PI73>0</PI73>
+			<PI74>0</PI74>
+			<PI75>0</PI75>
+			<PI76>0</PI76>
+			<PI80>0</PI80>
+			<PI90>0</PI90>
+			<PI100>0</PI100>
+			<PI110>0</PI110>
+			<PI120>0</PI120>
+			<PI130>0</PI130>
+			<PI140>0</PI140>
+			<PI150>0</PI150>
+			<PI160>0</PI160>
+			<PI180>0</PI180>
+		</PermissibleInvestmentsSection>
+		<ExplanatoryNotesSection>
+			<PINOTE_1>All funds held in CITI Bank account (CITI Shopify Financial Services OPS USD). No outstanding stored value liability as company is pre-operational.</PINOTE_1>
+		</ExplanatoryNotesSection>
+	</Msbcrpi>
+	<Msbcrtda>
+		<ListSectionOfCompanyTransactionsItem>
+			<DetailItemList>
+			</DetailItemList>
+		</ListSectionOfCompanyTransactionsItem>
+		<ExplanatoryNotesSection>
+			<TDANOTE_1>No international transactions during Q4 2025. Company is pre-operational.</TDANOTE_1>
+		</ExplanatoryNotesSection>
+	</Msbcrtda>
+</MsbcrFiling>

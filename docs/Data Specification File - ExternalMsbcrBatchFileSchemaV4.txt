@@ -1,0 +1,503 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+	<xs:element name="MsbcrFiling">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Msbcrfc" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="Assets"  minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="FC10" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC20" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC30" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC40" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC50" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC60" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC70" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC80" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC90" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC100" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC100NOTE" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC120" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC130" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC140" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC150" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC150NOTE" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="LiabilitiesAndEquity"  minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="FC170" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC180" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC190" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC200" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC210" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC220" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC230" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC240" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC240NOTE" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC260" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC270" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC270NOTE" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC290" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC300" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC310" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC320" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC330" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC340" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC360" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC370" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC380" type="Dollar" minOccurs="0" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="IncomeStatement"  minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="FC410" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC420" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC430" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC440" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC450" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC460" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC470" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC480" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC480NOTE" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC500" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC510" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC520" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC530" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC540" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC550" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC560" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC570" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC580" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC590" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC590NOTE" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC620" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC640" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC650" type="Dollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="FC670" type="Dollar" minOccurs="0" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ExplanatoryNotesSection"  minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="FCNOTE_1" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Msbcrta" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="TransactionsCompanyWideSection"  minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="TA10" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA20" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA30" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA40" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA70" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA80" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA90" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA100" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA110" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA120" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA130" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA140" type="Hundredth" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA150" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA160" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA170" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA180" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA190" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA200" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA210" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA220" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA230" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA240" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA250" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA280" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA290" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA300" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA310" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA320" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="TA330" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ExplanatoryNotesSection"  minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="TANOTE_1" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Msbcrst" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="TransactionsStateSpecificSection"  minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="ST10" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST20" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST30" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST40" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST70" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST80" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST90" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST100" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST110" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST120" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST130" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST140" type="Hundredth" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST150" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST160" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST170" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST180" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST190" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST200" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST210" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST220" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST230" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST240" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST250" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST280" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST290" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST300" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST310" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST320" type="Count" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST330" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="ST360" type="PositiveDollar" minOccurs="0" maxOccurs="1" />									
+										<xs:element name="ST361" type="PositiveDollar" minOccurs="0" maxOccurs="1" />										
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ExplanatoryNotesSection"  minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="STNOTE_1" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="stateCode" use="required" >
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="AL" />
+									<xs:enumeration value="AK" />
+									<xs:enumeration value="AZ" />
+									<xs:enumeration value="AR" />
+									<xs:enumeration value="CA" />
+									<xs:enumeration value="CO" />
+									<xs:enumeration value="CT" />
+									<xs:enumeration value="DE" />
+									<xs:enumeration value="DC" />
+									<xs:enumeration value="FL" />
+									<xs:enumeration value="GA" />
+									<xs:enumeration value="GU" />
+									<xs:enumeration value="HI" />
+									<xs:enumeration value="ID" />
+									<xs:enumeration value="IL" />
+									<xs:enumeration value="IN" />
+									<xs:enumeration value="IA" />
+									<xs:enumeration value="KS" />
+									<xs:enumeration value="KY" />
+									<xs:enumeration value="LA" />
+									<xs:enumeration value="ME" />
+									<xs:enumeration value="MD" />
+									<xs:enumeration value="MA" />
+									<xs:enumeration value="MI" />
+									<xs:enumeration value="MN" />
+									<xs:enumeration value="MS" />
+									<xs:enumeration value="MO" />
+									<xs:enumeration value="MT" />
+									<xs:enumeration value="NE" />
+									<xs:enumeration value="NV" />
+									<xs:enumeration value="NH" />
+									<xs:enumeration value="NJ" />
+									<xs:enumeration value="NM" />
+									<xs:enumeration value="NY" />
+									<xs:enumeration value="NC" />
+									<xs:enumeration value="ND" />
+									<xs:enumeration value="OH" />
+									<xs:enumeration value="OK" />
+									<xs:enumeration value="OR" />
+									<xs:enumeration value="PA" />
+									<xs:enumeration value="PR" />
+									<xs:enumeration value="RI" />
+									<xs:enumeration value="SC" />
+									<xs:enumeration value="SD" />
+									<xs:enumeration value="TN" />
+									<xs:enumeration value="TX" />
+									<xs:enumeration value="UT" />
+									<xs:enumeration value="VT" />
+									<xs:enumeration value="VA" />
+									<xs:enumeration value="WA" />
+									<xs:enumeration value="WV" />
+									<xs:enumeration value="WI" />
+									<xs:enumeration value="WY" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Msbcrpi" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="PermissibleInvestmentsSection"  minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PI10" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI20" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI21" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI30" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI31" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI32" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI50" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI60" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI61" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI62" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI70" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI71" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI72" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI73" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI74" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI75" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI76" type="PositiveDollar" minOccurs="0" maxOccurs="1" />										
+										<xs:element name="PI80" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI90" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI100" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI100NOTE" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI110" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI120" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI130" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI140" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI150" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI160" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI160NOTE" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+										<xs:element name="PI180" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ExplanatoryNotesSection"  minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="PINOTE_1" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Msbcrtda" minOccurs="0" maxOccurs="1">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ListSectionOfCompanyTransactionsItem" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DetailItemList" minOccurs="0" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="CompanyTransactionsItem" minOccurs="0" maxOccurs="10000">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="TDA" type="ShortText" minOccurs="0" maxOccurs="1" />
+																<xs:element name="TDA_1" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+																<xs:element name="TDA_2" type="Count" minOccurs="0" maxOccurs="1" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ExplanatoryNotesSection"  minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="TDANOTE_1" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Msbcrtdb" minOccurs="0" maxOccurs="unbounded">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="ListSectionOfStateTransactionsItem" minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="DetailItemList" minOccurs="0" maxOccurs="1">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="StateTransactionsItem" minOccurs="0" maxOccurs="10000">
+														<xs:complexType>
+															<xs:sequence>
+																<xs:element name="TDB" type="ShortText" minOccurs="0" maxOccurs="1" />
+																<xs:element name="TDB_1" type="PositiveDollar" minOccurs="0" maxOccurs="1" />
+																<xs:element name="TDB_2" type="Count" minOccurs="0" maxOccurs="1" />
+															</xs:sequence>
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="ExplanatoryNotesSection"  minOccurs="0" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="TDBNOTE_1" type="ExplanatoryText" minOccurs="0" maxOccurs="1" />
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="stateCode" use="required" >
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="AL" />
+									<xs:enumeration value="AK" />
+									<xs:enumeration value="AZ" />
+									<xs:enumeration value="AR" />
+									<xs:enumeration value="CA" />
+									<xs:enumeration value="CO" />
+									<xs:enumeration value="CT" />
+									<xs:enumeration value="DE" />
+									<xs:enumeration value="DC" />
+									<xs:enumeration value="FL" />
+									<xs:enumeration value="GA" />
+									<xs:enumeration value="GU" />
+									<xs:enumeration value="HI" />
+									<xs:enumeration value="ID" />
+									<xs:enumeration value="IL" />
+									<xs:enumeration value="IN" />
+									<xs:enumeration value="IA" />
+									<xs:enumeration value="KS" />
+									<xs:enumeration value="KY" />
+									<xs:enumeration value="LA" />
+									<xs:enumeration value="ME" />
+									<xs:enumeration value="MD" />
+									<xs:enumeration value="MA" />
+									<xs:enumeration value="MI" />
+									<xs:enumeration value="MN" />
+									<xs:enumeration value="MS" />
+									<xs:enumeration value="MO" />
+									<xs:enumeration value="MT" />
+									<xs:enumeration value="NE" />
+									<xs:enumeration value="NV" />
+									<xs:enumeration value="NH" />
+									<xs:enumeration value="NJ" />
+									<xs:enumeration value="NM" />
+									<xs:enumeration value="NY" />
+									<xs:enumeration value="NC" />
+									<xs:enumeration value="ND" />
+									<xs:enumeration value="OH" />
+									<xs:enumeration value="OK" />
+									<xs:enumeration value="OR" />
+									<xs:enumeration value="PA" />
+									<xs:enumeration value="PR" />
+									<xs:enumeration value="RI" />
+									<xs:enumeration value="SC" />
+									<xs:enumeration value="SD" />
+									<xs:enumeration value="TN" />
+									<xs:enumeration value="TX" />
+									<xs:enumeration value="UT" />
+									<xs:enumeration value="VT" />
+									<xs:enumeration value="VA" />
+									<xs:enumeration value="WA" />
+									<xs:enumeration value="WV" />
+									<xs:enumeration value="WI" />
+									<xs:enumeration value="WY" />
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:attribute>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="formVersion" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string" >
+						<xs:enumeration value="V4" />
+						<xs:enumeration value="v4" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="year" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:integer">
+						<xs:minInclusive value="2021" />
+						<xs:totalDigits value="4" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+			<xs:attribute name="periodType" use="required">
+				<xs:simpleType>
+					<xs:restriction base="xs:string" >
+						<xs:enumeration value="MSBQ1" />
+						<xs:enumeration value="MSBQ2" />
+						<xs:enumeration value="MSBQ3" />
+						<xs:enumeration value="MSBQ4" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:simpleType name="PositiveDollar">
+		<xs:restriction base="xs:long">
+			<xs:totalDigits value="13" />
+			<xs:fractionDigits value="0" />
+			<xs:minInclusive value="0" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Dollar">
+		<xs:restriction base="xs:long">
+			<xs:totalDigits value="13" />
+			<xs:fractionDigits value="0" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Count">
+		<xs:restriction base="xs:long">
+			<xs:totalDigits value="13" />
+			<xs:fractionDigits value="0" />
+			<xs:minInclusive value="0" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Number">
+		<xs:restriction base="xs:long">
+			<xs:totalDigits value="13" />
+			<xs:fractionDigits value="0" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Hundredth">
+		<xs:restriction base="xs:decimal">
+			<xs:totalDigits value="13" />
+			<xs:pattern value="\d+\.\d{2}" />
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ShortText">
+		<xs:restriction base="xs:string" >
+			<xs:maxLength value="150" />
+			<xs:pattern value="[^&lt;>%]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="ExplanatoryText">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="4000" />
+			<xs:pattern value="[^&lt;>%]*"/>
+		</xs:restriction>
+	</xs:simpleType>
+</xs:schema>
