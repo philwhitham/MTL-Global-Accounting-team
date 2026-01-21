@@ -82,8 +82,9 @@ assignees: ''
 
 ## 📅 Timeline
 
-- **Target Review Completion**: February 7, 2026
-- **Final Approval**: February 14, 2026
+- **Target Review Completion**: January 28, 2026
+- **Final Approval**: February 2, 2026
+- **Target Submission Date**: February 6, 2026 (9 days before deadline)
 - **NMLS Submission Deadline**: February 15, 2026
 
 ---

@@ -428,7 +428,7 @@ Income Statement:
 - [ ] Approve for submission
 
 **Assigned To**: Finance/Accounting Team  
-**Due Date**: February 7, 2026  
+**Due Date**: January 28, 2026  
 **Status**: Not yet started
 
 ---
@@ -443,7 +443,7 @@ Income Statement:
 - [ ] Approve for submission
 
 **Assigned To**: Legal/Compliance Team  
-**Due Date**: February 7, 2026  
+**Due Date**: January 28, 2026  
 **Status**: Not yet started
 
 ---
@@ -457,7 +457,7 @@ Income Statement:
 - [ ] Authorize submission to NMLS
 
 **Assigned To**: Phil Whitham (coordinator)  
-**Due Date**: February 14, 2026  
+**Due Date**: February 2, 2026  
 **Status**: Waiting for team reviews
 
 ---
@@ -496,25 +496,32 @@ The XML file is technically complete and valid. All automated checks have passed
 
 ## 📅 **NEXT STEPS & TIMELINE**
 
-### **Week of January 27, 2026**
+### **Week of January 21, 2026** (This Week)
+- [ ] Create GitHub Issue for approval tracking
 - [ ] Schedule review meetings with Finance and Legal teams
 - [ ] Distribute report summary and XML file
 - [ ] Prepare answers to anticipated questions
 
-### **By February 7, 2026** (Target)
+### **By January 28, 2026** (Target Review Completion)
 - [ ] Complete Finance team review
 - [ ] Complete Legal/Compliance team review
 - [ ] Address any feedback or corrections
 
-### **By February 14, 2026** (Final Deadline)
+### **By February 2, 2026** (Final Approval Deadline)
 - [ ] Obtain final approval from all stakeholders
 - [ ] Make any final corrections if needed
 - [ ] Prepare for NMLS portal submission
 
-### **February 15, 2026** (Due Date)
+### **By February 6, 2026** (Target Submission Date)
 - [ ] Submit to NMLS portal
 - [ ] Retain copy for records
 - [ ] Document submission confirmation
+- [ ] Monitor for acceptance/validation messages
+
+### **Buffer Period: February 6-15, 2026** (9 Days)
+- [ ] Address any NMLS validation issues if they arise
+- [ ] Resubmit if necessary
+- [ ] Final deadline: February 15, 2026
 
 ---
 
@@ -524,7 +531,7 @@ The XML file is technically complete and valid. All automated checks have passed
 - ✅ Technical validation (complete)
 - ✅ Data accuracy (user-confirmed)
 - ✅ XML structure (validated against schema)
-- ✅ Timeline (25 days ahead of deadline)
+- ✅ Timeline (target submission 9 days before deadline)
 
 ### **MEDIUM RISK ITEMS** 🟡
 - ⏳ Stakeholder review timing (need to schedule soon)
@@ -567,7 +574,8 @@ I certify that:
 
 **Validated By**: Phil Whitham  
 **Date**: January 21, 2026  
-**Next Review**: February 7, 2026  
+**Target Review**: January 28, 2026  
+**Target Submission**: February 6, 2026 (9 days before deadline)
 
 ---
 

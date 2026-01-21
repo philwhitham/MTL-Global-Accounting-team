@@ -2,7 +2,8 @@
 
 **Report**: Shopify Financial Services Inc. - Q4 2025 MSB Call Report  
 **Period**: October 1 - December 31, 2025  
-**Due Date**: February 15, 2026  
+**Target Submission**: February 6, 2026 (9 days before deadline)  
+**NMLS Deadline**: February 15, 2026  
 **NMLS ID**: 2689562  
 
 ---
