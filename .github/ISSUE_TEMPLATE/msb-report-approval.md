@@ -16,9 +16,11 @@ assignees: ''
 
 ## 📁 Files for Review
 
-- **XML Report**: [`MSB Call Reports/2025/Q4/SHOPIFY_FS_Q4_2025_MSB_REPORT.xml`](../../../MSB%20Call%20Reports/2025/Q4/SHOPIFY_FS_Q4_2025_MSB_REPORT.xml)
-- **Summary**: [`MSB Call Reports/2025/Q4/Q4_2025_REPORT_SUMMARY.md`](../../../MSB%20Call%20Reports/2025/Q4/Q4_2025_REPORT_SUMMARY.md)
-- **Validation**: [`MSB Call Reports/2025/Q4/PRE_SUBMISSION_VALIDATION.md`](../../../MSB%20Call%20Reports/2025/Q4/PRE_SUBMISSION_VALIDATION.md)
+- **XML Report**: [`SHOPIFY_FS_Q4_2025_MSB_REPORT.xml`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/SHOPIFY_FS_Q4_2025_MSB_REPORT.xml)
+- **Summary**: [`Q4_2025_REPORT_SUMMARY.md`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/Q4_2025_REPORT_SUMMARY.md)
+- **Validation**: [`PRE_SUBMISSION_VALIDATION.md`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/PRE_SUBMISSION_VALIDATION.md)
+- **Timeline**: [`SUBMISSION_TIMELINE.md`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/SUBMISSION_TIMELINE.md)
+- **Approvals**: [`APPROVALS.md`](https://github.com/philwhitham/MTL-Global-Accounting-team/blob/main/MSB%20Call%20Reports/2025/Q4/APPROVALS.md)
 
 ---
 
