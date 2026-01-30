@@ -3,6 +3,15 @@
 	<Msbcrfc>	
 		<Assets>
 			<FC10>2000000</FC10>
+			<FC20>0</FC20>
+			<FC30>0</FC30>
+			<FC40>0</FC40>
+			<FC50>0</FC50>
+			<FC60>0</FC60>
+			<FC70>0</FC70>
+			<FC80>0</FC80>
+			<FC90>0</FC90>
+			<FC100>0</FC100>
 			<FC120>0</FC120>
 			<FC130>0</FC130>
 			<FC140>0</FC140>
@@ -59,8 +68,35 @@
 	</Msbcrfc>	
 	<Msbcrta>
 		<TransactionsCompanyWideSection>
+			<TA10>0</TA10>
+			<TA20>0</TA20>
+			<TA30>0</TA30>
+			<TA40>0</TA40>
+			<TA70>0</TA70>
+			<TA80>0</TA80>
 			<TA90>0</TA90>
 			<TA100>0</TA100>
+			<TA110>0</TA110>
+			<TA120>0</TA120>
+			<TA130>0</TA130>
+			<TA140>0.00</TA140>
+			<TA150>0</TA150>
+			<TA160>0</TA160>
+			<TA170>0</TA170>
+			<TA180>0</TA180>
+			<TA190>0</TA190>
+			<TA200>0</TA200>
+			<TA210>0</TA210>
+			<TA220>0</TA220>
+			<TA230>0</TA230>
+			<TA240>0</TA240>
+			<TA250>0</TA250>
+			<TA280>0</TA280>
+			<TA290>0</TA290>
+			<TA300>0</TA300>
+			<TA310>0</TA310>
+			<TA320>0</TA320>
+			<TA330>0</TA330>
 		</TransactionsCompanyWideSection>
 		<ExplanatoryNotesSection>
 			<TANOTE_1>No stored value transactions during Q4 2025. Company is pre-operational pending completion of state licensing and product launch.</TANOTE_1>
@@ -68,29 +104,116 @@
 	</Msbcrta>
 	<Msbcrst stateCode="PA">
 		<TransactionsStateSpecificSection>
+			<ST10>0</ST10>
+			<ST20>0</ST20>
+			<ST30>0</ST30>
+			<ST40>0</ST40>
+			<ST70>0</ST70>
+			<ST80>0</ST80>
 			<ST90>0</ST90>
 			<ST100>0</ST100>
+			<ST110>0</ST110>
+			<ST120>0</ST120>
+			<ST130>0</ST130>
+			<ST140>0.00</ST140>
+			<ST150>0</ST150>
+			<ST160>0</ST160>
+			<ST170>0</ST170>
+			<ST180>0</ST180>
+			<ST190>0</ST190>
+			<ST200>0</ST200>
+			<ST210>0</ST210>
+			<ST220>0</ST220>
+			<ST230>0</ST230>
+			<ST240>0</ST240>
+			<ST250>0</ST250>
+			<ST280>0</ST280>
+			<ST290>0</ST290>
+			<ST300>0</ST300>
+			<ST310>0</ST310>
+			<ST320>0</ST320>
+			<ST330>0</ST330>
+			<ST360>1000000</ST360>
+			<ST361>0</ST361>
 		</TransactionsStateSpecificSection>
 		<ExplanatoryNotesSection>
-			<STNOTE_1>Pennsylvania license effective November 7, 2025. No stored value transactions during Q4 2025.</STNOTE_1>
+			<STNOTE_1>Pennsylvania license effective November 7, 2025. Surety bond: $1,000,000. No stored value transactions during Q4 2025.</STNOTE_1>
 		</ExplanatoryNotesSection>
 	</Msbcrst>
 	<Msbcrst stateCode="AZ">
 		<TransactionsStateSpecificSection>
+			<ST10>0</ST10>
+			<ST20>0</ST20>
+			<ST30>0</ST30>
+			<ST40>0</ST40>
+			<ST70>0</ST70>
+			<ST80>0</ST80>
 			<ST90>0</ST90>
 			<ST100>0</ST100>
+			<ST110>0</ST110>
+			<ST120>0</ST120>
+			<ST130>0</ST130>
+			<ST140>0.00</ST140>
+			<ST150>0</ST150>
+			<ST160>0</ST160>
+			<ST170>0</ST170>
+			<ST180>0</ST180>
+			<ST190>0</ST190>
+			<ST200>0</ST200>
+			<ST210>0</ST210>
+			<ST220>0</ST220>
+			<ST230>0</ST230>
+			<ST240>0</ST240>
+			<ST250>0</ST250>
+			<ST280>0</ST280>
+			<ST290>0</ST290>
+			<ST300>0</ST300>
+			<ST310>0</ST310>
+			<ST320>0</ST320>
+			<ST330>0</ST330>
+			<ST360>25000</ST360>
+			<ST361>0</ST361>
 		</TransactionsStateSpecificSection>
 		<ExplanatoryNotesSection>
-			<STNOTE_1>Arizona license effective December 4, 2025. No stored value transactions during Q4 2025.</STNOTE_1>
+			<STNOTE_1>Arizona license effective December 4, 2025. Surety bond: $25,000. No stored value transactions during Q4 2025.</STNOTE_1>
 		</ExplanatoryNotesSection>
 	</Msbcrst>
 	<Msbcrst stateCode="AL">
 		<TransactionsStateSpecificSection>
+			<ST10>0</ST10>
+			<ST20>0</ST20>
+			<ST30>0</ST30>
+			<ST40>0</ST40>
+			<ST70>0</ST70>
+			<ST80>0</ST80>
 			<ST90>0</ST90>
 			<ST100>0</ST100>
+			<ST110>0</ST110>
+			<ST120>0</ST120>
+			<ST130>0</ST130>
+			<ST140>0.00</ST140>
+			<ST150>0</ST150>
+			<ST160>0</ST160>
+			<ST170>0</ST170>
+			<ST180>0</ST180>
+			<ST190>0</ST190>
+			<ST200>0</ST200>
+			<ST210>0</ST210>
+			<ST220>0</ST220>
+			<ST230>0</ST230>
+			<ST240>0</ST240>
+			<ST250>0</ST250>
+			<ST280>0</ST280>
+			<ST290>0</ST290>
+			<ST300>0</ST300>
+			<ST310>0</ST310>
+			<ST320>0</ST320>
+			<ST330>0</ST330>
+			<ST360>1000000</ST360>
+			<ST361>0</ST361>
 		</TransactionsStateSpecificSection>
 		<ExplanatoryNotesSection>
-			<STNOTE_1>Alabama license effective December 12, 2025. No stored value transactions during Q4 2025.</STNOTE_1>
+			<STNOTE_1>Alabama license effective December 12, 2025. Surety bond: $1,000,000. No stored value transactions during Q4 2025.</STNOTE_1>
 		</ExplanatoryNotesSection>
 	</Msbcrst>
 	<Msbcrpi>
