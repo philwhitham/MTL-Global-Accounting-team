@@ -455,101 +455,27 @@ Response:
 
 ---
 
-## ✅ **Section 6: Testing & Validation Checklist**
-
-### **6.1 Pre-Launch Testing**
-
-Before Shop Dollars launches, validate:
-
-- [ ] **Transaction capture working**: Create test purchase, verify all fields captured
-- [ ] **State validation working**: Try invalid state code, ensure rejection
-- [ ] **NULL state handling**: Try purchase without state, ensure proper error
-- [ ] **Timestamp accuracy**: Verify timestamp is UTC and accurate
-- [ ] **Status tracking**: Verify completed/pending/failed statuses work
-- [ ] **Refund handling**: Create refund, verify negative amount or reversal logic
-- [ ] **Balance reconciliation**: Sum purchases - redemptions = liability balance
-
----
-
-### **6.2 Post-Launch Monitoring**
-
-After Shop Dollars launches, monitor:
-
-- [ ] **Daily transaction volume**: Are we capturing all transactions?
-- [ ] **Null state rate**: What % of U.S. transactions have null state? (Should be 0%)
-- [ ] **Failed transaction rate**: Are transactions failing due to validation errors?
-- [ ] **Data completeness**: Are all required fields populated?
-- [ ] **Balance reconciliation**: Does outstanding liability match transaction sum?
-
----
-
-### **6.3 Quarterly Report Testing**
-
-Before filing each MSB Call Report, validate:
-
-- [ ] **TA90/TA100 queries work**: Run company-wide aggregation, verify non-zero
-- [ ] **ST90/ST100 queries work**: Run state-level aggregation for each licensed state
-- [ ] **State coverage**: All licensed states have data (even if zero)
-- [ ] **No duplicate transactions**: Transaction IDs are unique
-- [ ] **Quarter boundary accuracy**: Transactions allocated to correct quarter
-- [ ] **Currency consistency**: All amounts in USD
-- [ ] **Status filter accuracy**: Only 'completed' transactions counted
-
----
-
-## 🗓️ **Section 7: Timeline & Milestones**
-
-### **7.1 Product Launch Timeline**
-
-| Milestone | Target Date | Owner | Status |
-|-----------|-------------|-------|--------|
-| **Data requirements finalized** | January 30, 2026 | Accounting | ✅ Done |
-| **Database schema designed** | TBD | Engineering | ⏳ Pending |
-| **Transaction capture implemented** | TBD | Engineering | ⏳ Pending |
-| **State validation implemented** | TBD | Engineering | ⏳ Pending |
-| **Reporting queries tested** | TBD | Engineering | ⏳ Pending |
-| **Pre-launch testing complete** | TBD | Product + QA | ⏳ Pending |
-| **Shop Dollars launches** | TBD | Product | ⏳ Pending |
-
----
-
-### **7.2 First MSB Report Timeline**
-
-Assuming Shop Dollars launches in **Q1 2026**:
-
-| Milestone | Date | Owner | Notes |
-|-----------|------|-------|-------|
-| **Q1 2026 ends** | March 31, 2026 | - | Last day to capture Q1 transactions |
-| **Run Q1 aggregation queries** | April 1-5, 2026 | Engineering | Generate TA/ST data |
-| **Validate Q1 data** | April 5-10, 2026 | Accounting | Review for accuracy |
-| **Generate Q1 XML** | April 10-15, 2026 | Accounting | Create MSB Call Report |
-| **Submit Q1 report to NMLS** | **By May 15, 2026** | Accounting | **Regulatory deadline** |
-
-**⚠️ CRITICAL**: MSB Call Reports are due **45 days after quarter-end**. Late filing = penalties.
-
----
-
-## 📞 **Section 8: Open Questions for Product Team**
+## 📞 **Section 6: Open Questions for Product Team**
 
 Please answer these questions to finalize requirements:
 
-### **8.1 State Determination**
+### **6.1 State Determination**
 - [ ] Which address do we use to determine user state? (Billing? Shipping? Profile?)
 - [ ] What happens if a user has no state on file?
 - [ ] Can users change their state after purchase? (Does it affect past transactions?)
 
-### **8.2 International Users**
+### **6.2 International Users**
 - [ ] Can non-U.S. users purchase Shop Dollars?
 - [ ] If yes, from which countries?
 - [ ] Can Shop Dollars be redeemed at international merchants?
 
-### **8.3 Expiration & Refunds**
+### **6.3 Expiration & Refunds**
 - [ ] Do Shop Dollars ever expire?
 - [ ] If yes, after how long? (Inactivity? Fixed date?)
 - [ ] How are refunds handled? (Instant? Delayed? Credit back?)
 - [ ] Can Shop Dollars be transferred between users?
 
-### **8.4 Technical Implementation**
+### **6.4 Technical Implementation**
 - [ ] Where will transaction data be stored? (Which database?)
 - [ ] Will you create a dedicated `shop_dollars_transactions` table?
 - [ ] Can you provide a reporting API for quarterly aggregation?
@@ -557,7 +483,7 @@ Please answer these questions to finalize requirements:
 
 ---
 
-## 📚 **Section 9: Reference Documents**
+## 📚 **Section 7: Reference Documents**
 
 For more details, see:
 
@@ -568,7 +494,7 @@ For more details, see:
 
 ---
 
-## ✅ **Section 10: Summary Checklist**
+## ✅ **Section 8: Summary Checklist**
 
 ### **Must-Have for Product Launch:**
 
@@ -600,11 +526,11 @@ For more details, see:
 
 ### **For Product Team:**
 1. **Review this document** with Engineering, Product, and Legal
-2. **Answer open questions** (Section 8)
+2. **Answer open questions** (Section 6)
 3. **Design database schema** (Section 5.1)
 4. **Implement transaction capture** (Section 1)
 5. **Build reporting queries** (Section 5.2)
-6. **Test end-to-end** (Section 6)
+6. **Test end-to-end** before launch
 
 ### **For Accounting Team:**
 1. **Wait for product team responses** to open questions
