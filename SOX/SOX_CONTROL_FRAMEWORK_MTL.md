@@ -3,7 +3,7 @@
 **Entity:** Shopify Financial Services Inc.  
 **Scope:** Money transmitter and stored value (Shop Dollars) processes that will feed consolidated financial reporting  
 **Approach:** Build and document SOX-relevant controls **before** amounts reach material thresholds  
-**Last updated:** January 2026  
+**Last updated:** February 2026  
 
 ---
 
@@ -60,7 +60,7 @@ Design, document, and operate internal controls over financial reporting (ICFR) 
 
 Use this to track building and documenting controls **before** materiality:
 
-- [ ] **Process documentation** – End-to-end narrative/flow for stored value liability, revenue, and cash (and link to MSB Call Report where same source).
+- [x] **Process documentation** – End-to-end narrative/flow for stored value liability, revenue, and cash (and link to MSB Call Report where same source). See **SOX_PROCESS_NARRATIVE_STORED_VALUE.md** in this folder. *Note: chart of accounts and BigQuery table placeholders to be confirmed once product is operational.*
 - [ ] **Control matrix** – List of key controls by process/account with owner, frequency, and evidence (see **SOX_MTL_CONTROL_MATRIX.md** in this folder).
 - [ ] **Reconciliation discipline** – Stored value liability vs ledger/product data; liability vs FBO; MSB Call Report vs GL/supporting schedules; all reviewed and signed off.
 - [ ] **Segregation of duties** – Roles defined and documented (preparer, reviewer, approver, NMLS filer); access limited appropriately.

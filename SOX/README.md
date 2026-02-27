@@ -10,6 +10,7 @@
 
 | Document | Description |
 |----------|-------------|
+| **[FLOW_OF_FUNDS_MTL.md](FLOW_OF_FUNDS_MTL.md)** | Flow of funds: Shop User payment (card/Shop Wallet) → settlements & Shop User Stored Value → Merchant User Stored Value (FBO) → optional payout to external bank. |
 | **[SOX_CONTROL_FRAMEWORK_MTL.md](SOX_CONTROL_FRAMEWORK_MTL.md)** | Framework: objective, in-scope processes, control categories, implementation checklist, relationship to other docs. |
 | **[SOX_MTL_CONTROL_MATRIX.md](SOX_MTL_CONTROL_MATRIX.md)** | Control matrix: key controls with MTL transaction examples, internal vs third-party reconciliations, owners, evidence, and build priority. |
 
