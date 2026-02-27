@@ -1,9 +1,13 @@
 # SOX Process Narrative – Stored Value (Shop Pay Wallet Balance and Merchant User Stored Value)
 
 **Entity:** Shopify Financial Services Inc.
-**Process:** End-to-end stored value lifecycle — transaction initiation through financial close and regulatory reporting; covers both Shopper (buyer) and Merchant stored value.
+
+**Process:** End-to-end stored value lifecycle — transaction initiation through financial close and regulatory reporting; covers both Buyer and Merchant stored value.
+
 **Document type:** ICFR process narrative
+
 **Status:** Draft — pending chart of accounts mapping (product in build; account numbers to be confirmed in NetSuite once operational; descriptive names used throughout)
+
 **Last updated:** February 2026
 
 ---
@@ -14,9 +18,9 @@ This narrative documents the end-to-end process for Shopify Financial Services I
 
 **Two stored value liabilities are in scope:**
 
-1. **Shopper Stored Value Liability** — funds loaded into and held in the Shop Pay Wallet Balance (Shop Dollars) by Shoppers (buyers). Created by ACH deposits; extinguished by Shop Dollars payments to Merchants, withdrawals to external bank, or breakage.
+1. **Buyer Stored Value Liability** — funds loaded into and held in the Shop Pay Wallet Balance (Shop Dollars) by Buyers. Created by ACH deposits from Buyer's external bank account; extinguished by Shop Dollars payments to Merchants, withdrawals to external bank (confirm current product scope; see §8), or breakage.
 
-2. **Merchant Stored Value Liability** — funds credited to the Merchant User Stored Value (merchant wallet) from buyer payments. Created by card settlement proceeds or Shop Dollars redemptions; extinguished by merchant payouts to external bank or card-funded refunds.
+2. **Merchant Stored Value Liability** — funds credited to the Merchant User Stored Value (merchant wallet) from buyer payments. Created by card settlement proceeds or Shop Dollars redemptions; extinguished by merchant payouts to external bank, card-funded refunds, or (future state) application toward Shopify-billed obligations such as subscription fees, MCA repayments, or loan repayments.
 
 Both liabilities are held within the same FBO account pool at the Bank Partner (Citi). The FBO bank balance should equal the sum of both liabilities at all times, subject to timing items (ACH in-transit, card settlements in-transit) and accrued interest not yet swept.
 
@@ -26,37 +30,40 @@ Both liabilities are held within the same FBO account pool at the Bank Partner (
 
 | System | Role | Owned by |
 |--------|------|----------|
-| **Shop App / Shopify platform** | Source of truth for individual Shopper and Merchant balances and transaction history | Shopify Inc. (product/engineering) |
-| **FBO Bank Account(s)** (Citi, IDs: 11623 CLE USD, 11624 OPS USD) | Omnibus account holding all Shopper and Merchant funds; third-party independent verification source | Bank Partner (Citi) |
+| **Shop App / Shopify platform** | Source of truth for individual Buyer and Merchant balances and transaction history (current state; may transition to Standalone Ledger — see below) | Shopify Inc. (product/engineering) |
+| **Standalone Ledger** (in build) | Product-level financial ledger being built as part of the Shopify FS product; will record individual wallet transactions at granular level; how and at what level it pushes data to NetSuite is to be determined | Shopify Inc. (product/engineering) |
+| **FBO Bank Account(s)** (Citi, IDs: 11623 CLE USD, 11624 OPS USD) | Omnibus account holding all Buyer and Merchant funds; third-party independent verification source | Bank Partner (Citi) |
 | **Payment Partner** (e.g. Stripe, PayPal) | Settles card-funded buyer payments into FBO (inflow); processes merchant payouts from FBO (outflow) | Third party |
-| **NetSuite** (Subsidiary ID: 87 – Shopify Financial Services Inc.) | General ledger; records both stored value liabilities, FBO cash, and revenue | Shopify Finance / Accounting |
-| **BigQuery** | Transaction-level data; supports TA/ST MSB Call Report fields and reconciliation | Shopify Data Engineering |
+| **NetSuite** (Subsidiary ID: 87 – Shopify Financial Services Inc.) | Accounting general ledger; records both stored value liabilities, FBO cash, and revenue | Shopify Finance / Accounting |
+| **BigQuery** | Transaction data warehouse; supports extraction of transaction counts and volumes for TA/ST MSB Call Report fields; not a financial ledger | Shopify Data Engineering |
 | **NMLS Portal** | Submission platform for MSB Call Reports | NMLS (external) |
 
-**Single source of truth principle:** NetSuite is the general ledger of record for Shopify FS. Product/platform transaction data (BigQuery) must reconcile to NetSuite at each period-end. There shall be no parallel shadow books or off-system spreadsheets used as the authoritative record for any balance that feeds consolidated reporting or MSB Call Reports.
+**General ledger of record:** NetSuite is the accounting general ledger of record for Shopify FS. All stored value liability balances and FBO cash balances are authoritative in NetSuite. The Standalone Ledger (once built) will be the product-level transaction ledger; the relationship between the Standalone Ledger and NetSuite (including how journal entries are generated and at what level of aggregation) is an open item — see §8. BigQuery is a data warehouse, not a ledger, and transaction counts and volumes from BigQuery must reconcile to NetSuite-recorded balances at each period-end. There shall be no parallel shadow books or off-system spreadsheets used as the authoritative record for any balance that feeds consolidated reporting or MSB Call Reports.
 
 ---
 
 ## 3. Transaction Types and Funds Flow
 
-The stored value lifecycle involves two parties — Shoppers (buyers) and Merchants — each with their own stored value balance within the same FBO pool. **Sections 3.1–3.6** cover the Shopper (buyer) wallet. **Sections 3.7–3.8** cover the Merchant wallet. All transactions ultimately affect one or both stored value liabilities and/or the FBO cash balance.
+The stored value lifecycle involves two parties — Buyers and Merchants — each with their own stored value balance within the same FBO pool. **Sections 3.1–3.5** cover Buyer wallet transactions. **Section 3.5** covers FBO interest income (applies across both wallets). **Sections 3.6–3.7** cover Merchant wallet transactions. All transactions ultimately affect one or both stored value liabilities and/or the FBO cash balance.
 
-### 3.1 Funding (ACH Deposit — Shopper Stored Value Liability Created)
+### 3.1 Funding (ACH Deposit — Buyer Stored Value Liability Created)
 
-**Trigger:** Shopper initiates an ACH debit from their external bank account via Shop App.
+**Trigger:** Buyer initiates an ACH debit from their external bank account via Shop App.
 
 **Step-by-step:**
 
-1. Shopper requests to add funds to their Shop Pay Wallet Balance in Shop App.
-2. Shop App instructs Bank Partner (acting as ODFI) to initiate an ACH debit from the Shopper's bank.
+1. Buyer requests to add funds to their Shop Pay Wallet Balance in Shop App.
+2. Shop App instructs Bank Partner (acting as ODFI) to initiate an ACH debit from the Buyer's bank.
 3. ACH settles (typically 2–3 business days); funds arrive in the FBO account at Citi.
-4. Shop App credits the Shopper's individual balance in the product system.
+4. Shop App credits the Buyer's individual balance in the product system.
 5. NetSuite records:
    - **Debit:** FBO Cash – Citi `[CLE USD or OPS USD, to be confirmed]`
-   - **Credit:** Shopper Stored Value Liability
-6. Shopper Stored Value Liability is now outstanding (FC220 increases — confirm whether FC220 includes Merchant Stored Value Liability; see §8).
+   - **Credit:** Buyer Stored Value Liability
+6. Buyer Stored Value Liability is now outstanding (FC220 increases — confirm whether FC220 includes Merchant Stored Value Liability; see §8).
 
-**MSB fields impacted:** FC220 (↑), TA90 (count ↑), TA100 ($ ↑), ST90/ST100 (by Shopper's state)
+**Note on funding mechanism:** The original business plan documents ACH as the funding method. Confirm with Product/Engineering whether buyers may also fund via credit/debit card processed by Stripe/PayPal, and if so, update this section accordingly — see §8.
+
+**MSB fields impacted:** FC220 (↑), TA90 (count ↑), TA100 ($ ↑), ST90/ST100 (by Buyer's state)
 
 **Control points:** MTL-SV-01 (liability recon), MTL-SV-02 (cut-off), MTL-SV-04 (total liability vs FBO bank), MTL-REG-01 (MSB recon), MTL-REG-03 (TA90/100 vs bank/processor)
 
@@ -64,20 +71,20 @@ The stored value lifecycle involves two parties — Shoppers (buyers) and Mercha
 
 ### 3.2 Shop Dollars Redemption (Merchant Payment) — Internal Transfer to Merchant Wallet
 
-**Trigger:** Shopper uses Shop Pay Wallet Balance (Shop Dollars) at checkout to pay a Merchant.
+**Trigger:** Buyer uses Shop Pay Wallet Balance (Shop Dollars) at checkout to pay a Merchant.
 
 **Step-by-step:**
 
-1. Shopper selects Shop Pay Wallet Balance at checkout; Shopify FS confirms sufficient funds.
-2. Product system debits the Shopper's individual balance (Shopper Stored Value decreases).
+1. Buyer selects Shop Pay Wallet Balance at checkout; Shopify FS confirms sufficient funds.
+2. Product system debits the Buyer's individual balance (Buyer Stored Value decreases).
 3. Product system credits the Merchant's individual balance in Merchant User Stored Value.
 4. **No external funds movement** — this is an internal transfer within the FBO account; FBO bank balance is unchanged.
 5. NetSuite records:
-   - **Debit:** Shopper Stored Value Liability
+   - **Debit:** Buyer Stored Value Liability
    - **Credit:** Merchant Stored Value Liability
-6. Shopper Stored Value Liability is extinguished for this payment; Merchant Stored Value Liability increases by the same amount.
+6. Buyer Stored Value Liability is extinguished for this payment; Merchant Stored Value Liability increases by the same amount.
 
-**Note:** FBO cash does not change at this step. Funds remain in the FBO until the Merchant requests a payout (§3.8). Total stored value liability (Shopper + Merchant combined) is unchanged.
+**Note:** FBO cash does not change at this step. Funds remain in the FBO until the Merchant requests a payout (§3.7). Total stored value liability (Buyer + Merchant combined) is unchanged.
 
 **MSB fields impacted:** FC220 (net zero change if both liabilities are included in FC220; see §8)
 
@@ -87,18 +94,18 @@ The stored value lifecycle involves two parties — Shoppers (buyers) and Mercha
 
 ### 3.3 Split Payment
 
-**Trigger:** Shopper uses Shop Pay Wallet Balance plus a card or other payment method.
+**Trigger:** Buyer uses Shop Pay Wallet Balance plus a card or other payment method.
 
 **Step-by-step:**
 
-1. Shopper allocates a portion of payment to Shop Pay Wallet Balance; remainder processed via card/other.
+1. Buyer allocates a portion of payment to Shop Pay Wallet Balance; remainder processed via card/other.
 2. Shop Dollars portion follows the same flow as §3.2 above (internal transfer to Merchant wallet; FBO cash unchanged for this portion).
-3. Card portion is processed by Payment Partner; card settlement proceeds flow into FBO and credit Merchant wallet per §3.7.
-4. NetSuite records the Shop Dollars portion per §3.2; the card settlement portion is recorded per §3.7.
+3. Card portion is processed by Payment Partner; card settlement proceeds flow into FBO and credit Merchant wallet per §3.6.
+4. NetSuite records the Shop Dollars portion per §3.2; the card settlement portion is recorded per §3.6.
 
 **Note:** Only the Shop Dollars portion of a split payment constitutes a stored value redemption for Shopify FS liability purposes. Cut-off controls (MTL-SV-02) must correctly capture the stored value amount and card amount separately.
 
-**Control points:** Same as §3.2 for the Shop Dollars portion; §3.7 for the card settlement portion.
+**Control points:** Same as §3.2 for the Shop Dollars portion; §3.6 for the card settlement portion.
 
 ---
 
@@ -109,14 +116,14 @@ The stored value lifecycle involves two parties — Shoppers (buyers) and Mercha
 #### Case A — Original payment was Shop Dollars (§3.2)
 
 1. Merchant initiates refund via Payment Partner or Shopify platform.
-2. Product system credits the Shopper's individual balance; debits the Merchant's individual balance.
+2. Product system credits the Buyer's individual balance; debits the Merchant's individual balance.
 3. **No external funds movement** — internal FBO transfer, the reverse of §3.2.
 4. NetSuite records:
    - **Debit:** Merchant Stored Value Liability
-   - **Credit:** Shopper Stored Value Liability
-5. Shopper Stored Value Liability re-created; Merchant Stored Value Liability decreases.
+   - **Credit:** Buyer Stored Value Liability
+5. Buyer Stored Value Liability re-created; Merchant Stored Value Liability decreases.
 
-#### Case B — Original payment was card-funded (§3.7)
+#### Case B — Original payment was card-funded (§3.6)
 
 1. Merchant initiates refund via Payment Partner.
 2. Payment Partner processes refund back to buyer's original card (outside Shopify FS scope for the card leg).
@@ -134,20 +141,22 @@ The stored value lifecycle involves two parties — Shoppers (buyers) and Mercha
 
 ---
 
-### 3.5 Withdrawal (ACH Credit — Shopper Stored Value Liability Extinguished)
+### 3.5 Withdrawal (ACH Credit — Buyer Stored Value Liability Extinguished)
 
-**Trigger:** Shopper requests withdrawal of their Shop Pay Wallet Balance to their external bank account.
+**Note — confirm current product scope:** The original business plan includes withdrawal to external bank as an explicit Buyer use case. Confirm with Product/Engineering whether this feature is in scope for the current build — see §8. If confirmed out of scope, this section will be removed.
+
+**Trigger:** Buyer requests withdrawal of their Shop Pay Wallet Balance to their external bank account.
 
 **Step-by-step:**
 
-1. Shopper initiates withdrawal in Shop App.
-2. Shopify FS (via Bank Partner as ODFI) initiates an ACH credit to the Shopper's bank.
-3. Product system debits the Shopper's individual balance.
+1. Buyer initiates withdrawal in Shop App.
+2. Shopify FS (via Bank Partner as ODFI) initiates an ACH credit to the Buyer's bank.
+3. Product system debits the Buyer's individual balance.
 4. ACH settles (2–3 business days); funds leave FBO account.
 5. NetSuite records:
-   - **Debit:** Shopper Stored Value Liability
+   - **Debit:** Buyer Stored Value Liability
    - **Credit:** FBO Cash – Citi
-6. Shopper Stored Value Liability extinguished (FC220 decreases).
+6. Buyer Stored Value Liability extinguished (FC220 decreases).
 
 **Control points:** MTL-SV-01, MTL-SV-02, MTL-SV-04, MTL-CASH-01
 
@@ -166,7 +175,7 @@ The stored value lifecycle involves two parties — Shoppers (buyers) and Mercha
    - **Credit:** Interest Income on FBO (FC430)
 4. Revenue recognized in the period earned.
 
-**Note:** Interest income belongs to Shopify FS, not to Shoppers or Merchants. The FBO bank balance will temporarily exceed total stored value liabilities until interest is swept or recognized as revenue. The intercompany agreement with Shopify Inc. governs how interest income flows through the corporate structure.
+**Note:** Interest income belongs to Shopify FS, not to Buyers or Merchants. The FBO bank balance will temporarily exceed total stored value liabilities until interest is swept or recognized as revenue. The intercompany agreement with Shopify Inc. governs how interest income flows through the corporate structure.
 
 **Control points:** MTL-REV-01 (fee/interest revenue recognition and reconciliation)
 
@@ -216,14 +225,14 @@ The stored value lifecycle involves two parties — Shoppers (buyers) and Mercha
 The following steps apply at the end of each accounting period (monthly; mandatory at quarter-end).
 
 ### Step 1 — Transaction Cut-Off Review
-- Confirm all ACH transactions (shopper fundings, shopper withdrawals, merchant payouts) and card settlements that initiated before period-end are included in the correct period, including those with 2–3 day settlement lags.
+- Confirm all ACH transactions (buyer fundings, buyer withdrawals if in scope, merchant payouts) and card settlements that initiated before period-end are included in the correct period, including those with 2–3 day settlement lags.
 - Flag and review any transactions near period-end for correct period assignment.
 - **Owner:** [Accounting preparer]
 - **Control:** MTL-SV-02
 - **Evidence:** Cut-off review workpaper or sample log
 
-### Step 2 — Shopper Stored Value Liability Reconciliation (Internal)
-- Reconcile NetSuite Shopper Stored Value Liability balance to the sum of all individual Shopper balances in the product system (or to a net transaction rollforward: opening + funding + Case A refunds − Shop Dollars payments − withdrawals = closing).
+### Step 2 — Buyer Stored Value Liability Reconciliation (Internal)
+- Reconcile NetSuite Buyer Stored Value Liability balance to the sum of all individual Buyer balances in the product system (or to a net transaction rollforward: opening + fundings + Case A refunds − Shop Dollars payments − withdrawals − breakage = closing).
 - Investigate and resolve variances above threshold `[threshold TBD]`.
 - **Owner:** [Accounting preparer]
 - **Control:** MTL-SV-01
@@ -238,7 +247,7 @@ The following steps apply at the end of each accounting period (monthly; mandato
 
 ### Step 4 — FBO Bank Reconciliation (Third Party)
 - Reconcile FBO account bank statement balance (Citi) to NetSuite FBO Cash balance.
-- Reconcile FBO Cash (GL) to total stored value liability (Shopper Stored Value Liability + Merchant Stored Value Liability), documenting known timing items (ACH in-transit, card settlements in-transit, accrued interest, etc.).
+- Reconcile FBO Cash (GL) to total stored value liability (Buyer Stored Value Liability + Merchant Stored Value Liability), documenting known timing items (ACH in-transit, card settlements in-transit, accrued interest, etc.).
 - **Owner:** [Accounting preparer]; reviewed by [Accounting reviewer]
 - **Controls:** MTL-CASH-01, MTL-CASH-02, MTL-SV-04
 - **Evidence:** Signed bank reconciliation; total liability-to-cash tie workpaper
@@ -252,7 +261,7 @@ The following steps apply at the end of each accounting period (monthly; mandato
 
 ### Step 6 — Management Review of Combined Liability Rollforward
 - Designated manager reviews the stored value liability rollforward for both wallets and approves:
-  - **Shopper:** Opening + fundings + Case A refunds − Shop Dollars payments − withdrawals − breakage = closing
+  - **Buyer:** Opening + fundings + Case A refunds − Shop Dollars payments − withdrawals − breakage = closing
   - **Merchant:** Opening + card settlements + Shop Dollars transfers in − merchant payouts − Case A refunds out − Case B refunds = closing
 - **Owner:** [Designated manager]
 - **Control:** MTL-SV-03
@@ -265,17 +274,17 @@ The following steps apply at the end of each accounting period (monthly; mandato
 The following additional steps apply at each quarter-end, after the period-end close steps in §4 are complete.
 
 ### Step 7 — MSB Data Extraction
-- Extract transaction data from BigQuery for the quarter: count and sum of all Shop Pay Wallet Balance funding transactions (TA90, TA100) and by Shopper state (ST90, ST100).
+- Extract transaction data from BigQuery for the quarter: count and sum of all Shop Pay Wallet Balance funding transactions (TA90, TA100) and by Buyer state (ST90, ST100).
 - Extract NetSuite balances: FC220 (total outstanding stored value liability at quarter-end — confirm whether this includes Merchant Stored Value Liability; see §8), FC430 (interest income for quarter), PI fields (permissible investments — FBO account balance).
 - **Owner:** [Accounting preparer / NMLS preparer]
 - **Evidence:** Data extraction workpaper (queries, outputs, dates)
 
 ### Step 8 — MSB Call Report Reconciliation to GL (Internal)
 - Reconcile key MSB Call Report fields to NetSuite and BigQuery:
-  - FC220 = NetSuite total stored value liability at quarter-end (Shopper + Merchant, subject to mapping confirmation)
+  - FC220 = NetSuite total stored value liability at quarter-end (Buyer + Merchant, subject to mapping confirmation)
   - FC430 = NetSuite interest income for the quarter
-  - TA90 / TA100 = BigQuery count/sum of shopper funding transactions for the quarter
-  - ST90 / ST100 (by state) = BigQuery count/sum by Shopper state
+  - TA90 / TA100 = BigQuery count/sum of buyer funding transactions for the quarter
+  - ST90 / ST100 (by state) = BigQuery count/sum by Buyer state
   - PI10 / PI120 = NetSuite FBO account balance
 - Document and resolve all variances.
 - **Owner:** [Accounting preparer]
@@ -283,7 +292,7 @@ The following additional steps apply at each quarter-end, after the period-end c
 - **Evidence:** MSB-to-GL reconciliation workpaper; pre-submission checklist
 
 ### Step 9 — MSB Transaction Volume Reconciliation to Third Party
-- Reconcile TA90/TA100 (shopper funding count and $) to bank or payment processor funding report (ACH credits to FBO from shopper fundings).
+- Reconcile TA90/TA100 (buyer funding count and $) to bank or payment processor funding report (ACH credits to FBO from buyer fundings).
 - Reconcile card settlement volume to payment partner settlement report (card-funded inflows to FBO for merchant wallet).
 - Reconcile merchant payout volume to payment partner payout report.
 - Document and resolve variances (timing, fees, etc.).
@@ -317,34 +326,34 @@ The following additional steps apply at each quarter-end, after the period-end c
 ## 6. Process Flow Summary
 
 ```
-SHOPPER (BUYER) WALLET
+BUYER WALLET
     │
-    ├── Funding (ACH in)           → FBO Cash ↑, Shopper SV Liability ↑
-    ├── Shop Dollars payment        → Shopper SV Liability ↓, Merchant SV Liability ↑ (FBO unchanged)
-    ├── Case A Refund (→ shopper)   → Merchant SV Liability ↓, Shopper SV Liability ↑ (FBO unchanged)
-    ├── Withdrawal (ACH out)        → Shopper SV Liability ↓, FBO Cash ↓
-    └── Interest on FBO             → FBO Cash ↑, Interest Income ↑
+    ├── Funding (ACH in)             → FBO Cash ↑, Buyer SV Liability ↑
+    ├── Shop Dollars payment          → Buyer SV Liability ↓, Merchant SV Liability ↑ (FBO unchanged)
+    ├── Case A Refund (→ buyer)       → Merchant SV Liability ↓, Buyer SV Liability ↑ (FBO unchanged)
+    ├── Withdrawal (ACH out)          → Buyer SV Liability ↓, FBO Cash ↓  [confirm in scope — see §8]
+    └── Interest on FBO               → FBO Cash ↑, Interest Income ↑
 
 MERCHANT WALLET
     │
-    ├── Card settlement (in)        → FBO Cash ↑, Merchant SV Liability ↑
-    ├── Shop Dollars transfer in    → Merchant SV Liability ↑ (see Shopper side above)
-    ├── Case B Refund (→ card)      → Merchant SV Liability ↓, FBO Cash ↓
-    └── Merchant payout (out)       → Merchant SV Liability ↓, FBO Cash ↓
+    ├── Card settlement (in)          → FBO Cash ↑, Merchant SV Liability ↑
+    ├── Shop Dollars transfer in      → Merchant SV Liability ↑ (see Buyer side above)
+    ├── Case B Refund (→ card)        → Merchant SV Liability ↓, FBO Cash ↓
+    └── Merchant payout (out)         → Merchant SV Liability ↓, FBO Cash ↓
     │
     ▼
 GENERAL LEDGER (NetSuite — Subsidiary 87)
-    │  Shopper SV Liability + Merchant SV Liability = FBO Cash (± timing items + accrued interest)
+    │  Buyer SV Liability + Merchant SV Liability = FBO Cash (± timing items + accrued interest)
     │
     ├── THIRD-PARTY VERIFICATION
     │       FBO Bank Statement (Citi) ←──────── independent
     │       Payment Partner Settlement Report ←── card-funded merchant wallet inflows
     │       Payment Partner Payout Report ←────── merchant payouts
-    │       Bank / Processor Funding Report ←───── shopper ACH fundings
+    │       Bank / Processor Funding Report ←───── buyer ACH fundings
     │
     ├── PERIOD-END CLOSE (Monthly / Quarterly)
     │       Cut-off review ─────────────────────── MTL-SV-02
-    │       Shopper liability recon ──────────────── MTL-SV-01
+    │       Buyer liability recon ──────────────── MTL-SV-01
     │       Merchant liability recon ─────────────── MTL-SV-01
     │       FBO bank recon (total liability) ──────── MTL-CASH-01/02, MTL-SV-04
     │       Revenue recognition ───────────────────── MTL-REV-01
@@ -367,7 +376,7 @@ The following GL accounts are referenced throughout this narrative using descrip
 
 | Account (Descriptive Name) | Description | MSB Field | Status |
 |---------------------------|-------------|-----------|--------|
-| **Shopper Stored Value Liability** | Outstanding balances owed to Shoppers (Shop Pay Wallet Balance / Shop Dollars) | FC220 (primary; see §8) | Account number TBD |
+| **Buyer Stored Value Liability** | Outstanding balances owed to Buyers (Shop Pay Wallet Balance / Shop Dollars) | FC220 (primary; see §8) | Account number TBD |
 | **Merchant Stored Value Liability** | Outstanding balances owed to Merchants (Merchant User Stored Value / merchant wallet) | FC220 (confirm inclusion; see §8) | Account number TBD |
 | **FBO Cash – Citi CLE USD** | FBO operating cash account (Citi account 11623) | PI10, PI120 | Account number TBD |
 | **FBO Cash – Citi OPS USD** | FBO cash account (Citi account 11624) | PI10, PI120 | Account number TBD |
@@ -382,14 +391,18 @@ The following GL accounts are referenced throughout this narrative using descrip
 
 | Item | Description | Status |
 |------|-------------|--------|
+| **Buyer wallet funding mechanism** | Original business plan documents ACH as the funding method. Confirm with Product/Engineering whether buyers may also fund via credit/debit card processed by Stripe/PayPal; if so, update §3.1 and related MSB reporting classification accordingly | To be confirmed with Product/Engineering |
+| **Buyer withdrawal feature** | Original business plan includes withdrawal to external bank as an explicit buyer use case. Confirm with Product/Engineering whether this feature is in scope for the current build; if confirmed out of scope, remove §3.5 and update rollforward formulas | To be confirmed with Product/Engineering |
+| **Standalone Ledger → NetSuite relationship** | Shopify FS product build includes a Standalone Ledger for individual wallet transactions. Confirm: (a) how and at what level (individual transactions vs aggregated summaries) data flows from the Standalone Ledger to NetSuite; (b) how journal entries are generated in NetSuite; (c) whether BigQuery receives data from the Standalone Ledger or directly from the product system | To be confirmed with Product/Engineering / Finance |
 | **FC220 scope — Merchant Stored Value** | Confirm whether Merchant Stored Value Liability is included in FC220 (outstanding stored value) for MSB reporting, or classified and reported separately | To be confirmed with Legal/Compliance |
 | **TA90/TA100 scope — card settlements** | Confirm whether card settlement inflows to Merchant User Stored Value are included in TA90/TA100 (stored value issuance) or classified under a different field (e.g., money transmission TA10/TA20) | To be confirmed with Legal/Compliance |
-| **BigQuery table(s)** | Tables containing Shop Pay Wallet Balance funding transactions (shopper ACH) and Merchant User Stored Value transactions for TA/ST fields | To be confirmed with Data Engineering |
-| **Refund classification** | How Case A vs Case B refunds are distinguished in BigQuery (original payment method flag); how refunds are identified separately from new shopper fundings | To be confirmed with Data Engineering |
-| **State field** | Field name for Shopper's state in BigQuery transaction data; state determination methodology (billing vs. shipping address) | To be confirmed with Data Engineering |
-| **Bank/processor reports** | Format and availability of: (a) ACH funding report from Citi for shopper fundings (MTL-REG-03); (b) card settlement report from payment partner for merchant wallet inflows | To be confirmed with Citi/Banking team and Payment Partner |
+| **BigQuery table(s)** | Tables containing Shop Pay Wallet Balance funding transactions (buyer ACH fundings) and Merchant User Stored Value transactions for TA/ST fields | To be confirmed with Data Engineering |
+| **Refund classification** | How Case A vs Case B refunds are distinguished in BigQuery (original payment method flag); how refunds are identified separately from new buyer fundings | To be confirmed with Data Engineering |
+| **State field** | Field name for Buyer's state in BigQuery transaction data; state determination methodology (billing vs. shipping address) | To be confirmed with Data Engineering |
+| **Bank/processor reports** | Format and availability of: (a) ACH funding report from Citi for buyer fundings (MTL-REG-03); (b) card settlement report from payment partner for merchant wallet inflows | To be confirmed with Citi/Banking team and Payment Partner |
 | **Payment partner payout report** | Format and availability of merchant payout report from Stripe/PayPal for MTL-REG-04 | To be confirmed with Payment Partner |
-| **Variance thresholds** | Define materiality thresholds for investigating variances in Shopper and Merchant liability reconciliations | To be confirmed with Finance/Accounting |
+| **Variance thresholds** | Define materiality thresholds for investigating variances in Buyer and Merchant liability reconciliations | To be confirmed with Finance/Accounting |
+| **Merchant Shopify bill payments (future state)** | When merchants use stored value to pay Shopify subscription fees, MCA repayments, or loan repayments, confirm the accounting treatment, extinguishment flow, and MSB reporting classification for this transaction type | To be confirmed with Product/Legal/Compliance when feature is ready for launch |
 
 ---
 
@@ -402,11 +415,13 @@ The following GL accounts are referenced throughout this narrative using descrip
 | `FLOW_OF_FUNDS_MTL.md` | Visual/tabular funds flow for both wallet sides; source reference for §3 of this narrative |
 | `docs/Financial_Reporting_Policy_DRAFT.md` | Governance, roles, escalation, and retention requirements referenced in Steps 11–12 |
 | `docs/SHOPIFY_STORED_VALUE_MAPPING.md` | MSB field-to-GL mapping detail |
-| `docs/BUSINESS_PLAN_ANALYSIS.md` | Source for buyer/shopper funds flow and business model detail |
+| `docs/BUSINESS_PLAN_ANALYSIS.md` | Source for buyer funds flow and business model detail |
 | `MSB Call Reports/2025/Q4/` | Filed Q4 2025 report; first operational example of Steps 7–12 |
 
 ---
 
 **Owner:** [Global Accounting / Finance Lead]
+
 **Review cadence:** Update whenever product features, systems, or account mappings change (MTL-CHG-01); confirm current as of each quarter-end close.
+
 **Classification:** Internal use — Shopify Financial Services Inc. Confidential
