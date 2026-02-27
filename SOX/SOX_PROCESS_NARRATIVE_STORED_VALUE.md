@@ -61,8 +61,6 @@ The stored value lifecycle involves two parties — Buyers and Merchants — eac
    - **Credit:** Buyer Stored Value Liability
 6. Buyer Stored Value Liability is now outstanding (FC220 increases — confirm whether FC220 includes Merchant Stored Value Liability; see §8).
 
-**Note on funding mechanism:** The original business plan documents ACH as the funding method. Confirm with Product/Engineering whether buyers may also fund via credit/debit card processed by Stripe/PayPal, and if so, update this section accordingly — see §8.
-
 **MSB fields impacted:** FC220 (↑), TA90 (count ↑), TA100 ($ ↑), ST90/ST100 (by Buyer's state)
 
 **Control points:** MTL-SV-01 (liability recon), MTL-SV-02 (cut-off), MTL-SV-04 (total liability vs FBO bank), MTL-REG-01 (MSB recon), MTL-REG-03 (TA90/100 vs bank/processor)
@@ -142,8 +140,6 @@ The stored value lifecycle involves two parties — Buyers and Merchants — eac
 ---
 
 ### 3.5 Withdrawal (ACH Credit — Buyer Stored Value Liability Extinguished)
-
-**Note — confirm current product scope:** The original business plan includes withdrawal to external bank as an explicit Buyer use case. Confirm with Product/Engineering whether this feature is in scope for the current build — see §8. If confirmed out of scope, this section will be removed.
 
 **Trigger:** Buyer requests withdrawal of their Shop Pay Wallet Balance to their external bank account.
 
@@ -331,7 +327,7 @@ BUYER WALLET
     ├── Funding (ACH in)             → FBO Cash ↑, Buyer SV Liability ↑
     ├── Shop Dollars payment          → Buyer SV Liability ↓, Merchant SV Liability ↑ (FBO unchanged)
     ├── Case A Refund (→ buyer)       → Merchant SV Liability ↓, Buyer SV Liability ↑ (FBO unchanged)
-    ├── Withdrawal (ACH out)          → Buyer SV Liability ↓, FBO Cash ↓  [confirm in scope — see §8]
+    ├── Withdrawal (ACH out)          → Buyer SV Liability ↓, FBO Cash ↓
     └── Interest on FBO               → FBO Cash ↑, Interest Income ↑
 
 MERCHANT WALLET
@@ -391,8 +387,6 @@ The following GL accounts are referenced throughout this narrative using descrip
 
 | Item | Description | Status |
 |------|-------------|--------|
-| **Buyer wallet funding mechanism** | Original business plan documents ACH as the funding method. Confirm with Product/Engineering whether buyers may also fund via credit/debit card processed by Stripe/PayPal; if so, update §3.1 and related MSB reporting classification accordingly | To be confirmed with Product/Engineering |
-| **Buyer withdrawal feature** | Original business plan includes withdrawal to external bank as an explicit buyer use case. Confirm with Product/Engineering whether this feature is in scope for the current build; if confirmed out of scope, remove §3.5 and update rollforward formulas | To be confirmed with Product/Engineering |
 | **Standalone Ledger → NetSuite relationship** | Shopify FS product build includes a Standalone Ledger for individual wallet transactions. Confirm: (a) how and at what level (individual transactions vs aggregated summaries) data flows from the Standalone Ledger to NetSuite; (b) how journal entries are generated in NetSuite; (c) whether BigQuery receives data from the Standalone Ledger or directly from the product system | To be confirmed with Product/Engineering / Finance |
 | **FC220 scope — Merchant Stored Value** | Confirm whether Merchant Stored Value Liability is included in FC220 (outstanding stored value) for MSB reporting, or classified and reported separately | To be confirmed with Legal/Compliance |
 | **TA90/TA100 scope — card settlements** | Confirm whether card settlement inflows to Merchant User Stored Value are included in TA90/TA100 (stored value issuance) or classified under a different field (e.g., money transmission TA10/TA20) | To be confirmed with Legal/Compliance |
