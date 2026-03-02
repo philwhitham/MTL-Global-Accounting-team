@@ -139,52 +139,267 @@ Investigate and resolve variances above a set threshold for each liability separ
 
 ## 2. Revenue (fees and breakage)
 
-| Control ID | Process / account | Control objective | Control description | Example MTL transaction | Frequency | Owner | Evidence | Status |
-|------------|-------------------|-------------------|---------------------|-------------------------|-----------|--------|----------|--------|
-| **MTL-REV-01** | Stored value fee revenue / interest income (FC430) | Fee and interest revenue is recognized in the correct period and amount per policy | Apply a **defined policy** for recognition of interest income on FBO balances and any fees on Shop Dollars (e.g. load fees, inactivity fees). Record revenue in the period earned; reconcile to underlying transaction or bank statement. | Example: Interest income of $15K earned on FBO balance in Q1 2026. Reconcile to Citi bank statement interest credit. If a load fee applies in future: "Buyer D pays $2 load fee for $50 Shop Dollars" — revenue of $2 recorded in the period and reconciled to fee transaction log. | Each period where fee or interest revenue exists; review at quarter-end | [Accounting preparer / reviewer] | Revenue reconciliation (GL revenue to bank statement or fee transaction detail); policy document | D / I / O |
-| **MTL-REV-02** | Breakage (unclaimed stored value) | Breakage is estimated and recognized in accordance with policy and consistently applied | Document a **breakage policy** (e.g. when balance is deemed abandoned, lookback period, method). Calculate breakage (e.g. by cohort or rate) and record to revenue and reduction of liability. **Management review** of breakage estimate and liability impact before close. Applies to Buyer Stored Value Liability (and Merchant, if applicable per policy). | Example: $10K of Shop Dollars balances are deemed abandoned per policy (e.g. 12 months inactive). Reduce Buyer SV Liability $10K, recognize $10K breakage revenue; management reviews and approves. | At least quarterly when breakage is material; otherwise per policy (e.g. annual) | [Accounting preparer]; [Designated manager] | Breakage policy; calculation workpaper; management sign-off on estimate and journal entry | D / I / O |
+---
+
+### MTL-REV-01 — Fee and interest revenue recognition
+
+| | |
+|---|---|
+| **Process / account** | Stored value fee revenue / interest income (FC430) |
+| **Source type** | Internal / Third party — bank statement |
+| **Frequency** | Each period where fee or interest revenue exists; review at quarter-end |
+| **Owner** | [Accounting preparer / reviewer] |
+| **Status** | D / I / O |
+
+**Objective:** Fee and interest revenue is recognized in the correct period and amount per policy.
+
+**Description:** Apply a defined policy for recognition of interest income on FBO balances and any fees on Shop Dollars (e.g. load fees, inactivity fees). Record revenue in the period earned; reconcile to underlying transaction or bank statement.
+
+**Example:** Interest income of $15K earned on FBO balance in Q1 2026 — reconcile to Citi bank statement interest credit. If a load fee applies in future: "Buyer D pays $2 load fee for $50 Shop Dollars" — revenue of $2 recorded in the period and reconciled to fee transaction log.
+
+**Evidence:** Revenue reconciliation (GL revenue to bank statement or fee transaction detail); policy document.
+
+---
+
+### MTL-REV-02 — Breakage recognition
+
+| | |
+|---|---|
+| **Process / account** | Breakage (unclaimed stored value) |
+| **Source type** | Internal |
+| **Frequency** | At least quarterly when breakage is material; otherwise per policy (e.g. annual) |
+| **Owner** | [Accounting preparer]; [Designated manager] |
+| **Status** | D / I / O |
+
+**Objective:** Breakage is estimated and recognized in accordance with policy and consistently applied.
+
+**Description:** Document a breakage policy (e.g. when balance is deemed abandoned, lookback period, method). Calculate breakage (e.g. by cohort or rate) and record to revenue and reduction of liability. Management review of breakage estimate and liability impact before close. Applies to Buyer Stored Value Liability (and Merchant, if applicable per policy).
+
+**Example:** $10K of Shop Dollars balances are deemed abandoned per policy (e.g. 12 months inactive). Reduce Buyer SV Liability $10K, recognize $10K breakage revenue; management reviews and approves.
+
+**Evidence:** Breakage policy; calculation workpaper; management sign-off on estimate and journal entry.
 
 ---
 
 ## 3. Cash / FBO accounts
 
-| Control ID | Process / account | Control objective | Control description | Example MTL transaction | Frequency | Owner | Evidence | Status |
-|------------|-------------------|-------------------|---------------------|-------------------------|-----------|--------|----------|--------|
-| **MTL-CASH-01** | FBO bank account(s) | FBO cash balance per bank agrees to books and is reconciled to total stored value liability | Perform **bank reconciliation** for each FBO account: bank statement balance vs GL FBO Cash. Reconcile **FBO Cash (GL)** to **total stored value liability** (Buyer Stored Value Liability + Merchant Stored Value Liability), or explain timing differences (e.g. ACH in-transit, card settlements in-transit, accrued interest not yet swept). Investigate and resolve variances above threshold. | Period-end: Buyer SV Liability $300K + Merchant SV Liability $250K = $550K total. FBO Cash (GL) = $550K. FBO bank statement = $549K; $1K difference = ACH in transit (documented). Bank rec and liability-to-cash tie signed off. | At least monthly; before quarter-end and before MSB submission | [Accounting preparer] | Signed bank reconciliation; total liability vs FBO cash reconciliation; variance log | D / I / O |
-| **MTL-CASH-02** | FBO cash | Reconciliations are reviewed and approved by someone other than preparer | A **reviewer** (different from preparer) reviews the FBO bank reconciliation and liability-to-cash reconciliation for completeness, reasonableness, and resolution of variances. Signs off before close. | Same as MTL-CASH-01; reviewer confirms total Buyer + Merchant liability ties to FBO bank and GL cash, and that all variances are explained. | Same as MTL-CASH-01 | [Accounting reviewer] | Reviewer sign-off on reconciliation package (date, name) | D / I / O |
+---
+
+### MTL-CASH-01 — FBO bank reconciliation (third party)
+
+| | |
+|---|---|
+| **Process / account** | FBO bank account(s) |
+| **Source type** | **Third party** — bank statement |
+| **Frequency** | At least monthly; before quarter-end and before MSB submission |
+| **Owner** | [Accounting preparer] |
+| **Status** | D / I / O |
+
+**Objective:** FBO cash balance per bank agrees to books and is reconciled to total stored value liability.
+
+**Description:** Perform bank reconciliation for each FBO account: bank statement balance vs GL FBO Cash. Reconcile FBO Cash (GL) to total stored value liability (Buyer Stored Value Liability + Merchant Stored Value Liability), or explain timing differences (e.g. ACH in-transit, card settlements in-transit, accrued interest not yet swept). Investigate and resolve variances above threshold.
+
+**Example:** Period-end: Buyer SV Liability $300K + Merchant SV Liability $250K = $550K total. FBO Cash (GL) = $550K. FBO bank statement = $549K; $1K difference = ACH in transit (documented). Bank rec and liability-to-cash tie signed off.
+
+**Evidence:** Signed bank reconciliation; total liability vs FBO cash reconciliation; variance log.
+
+---
+
+### MTL-CASH-02 — Independent review of FBO reconciliation
+
+| | |
+|---|---|
+| **Process / account** | FBO cash |
+| **Source type** | Third party (reviewer confirms) |
+| **Frequency** | Same as MTL-CASH-01 |
+| **Owner** | [Accounting reviewer] |
+| **Status** | D / I / O |
+
+**Objective:** Reconciliations are reviewed and approved by someone other than the preparer.
+
+**Description:** A reviewer (different from preparer) reviews the FBO bank reconciliation and liability-to-cash reconciliation for completeness, reasonableness, and resolution of variances. Signs off before close.
+
+**Example:** Same as MTL-CASH-01; reviewer confirms total Buyer + Merchant liability ties to FBO bank and GL cash, and that all variances are explained.
+
+**Evidence:** Reviewer sign-off on reconciliation package (date, name).
 
 ---
 
 ## 4. Data feeding MSB Call Report (regulatory vs books)
 
-| Control ID | Process / account | Control objective | Control description | Example MTL transaction | Frequency | Owner | Evidence | Status |
-|------------|-------------------|-------------------|---------------------|-------------------------|-----------|--------|----------|--------|
-| **MTL-REG-01** | MSB Call Report (FC220, TA90/100, ST90/100) | Figures in the MSB Call Report agree to the general ledger and supporting schedules | Before NMLS submission, **reconcile** key MSB Call Report fields to GL and workpapers: **FC220** (outstanding stored value) = total GL stored value liability (Buyer Stored Value Liability + Merchant Stored Value Liability; confirm with Legal/Compliance whether both are included in FC220 or reported separately — see process narrative §8 open items); **TA90/TA100** = count/sum of buyer funding transactions for the quarter from transaction ledger; **ST90/ST100** = same by Buyer state; **PI10/PI120** = NetSuite FBO account balance. Document in a pre-submission checklist or reconciliation. | Q1 2026 report. FC220 = $550K must equal total GL stored value liability (Buyer $300K + Merchant $250K, or buyer-only if Merchant SV is classified differently for MSB — confirm with Legal/Compliance before first operational filing). TA90 = 15,000 and TA100 = $1.2M must equal count and sum of all completed buyer funding transactions in the quarter. ST90 for PA = 3,000 must equal count of those where buyer_state = PA. | Every quarter before MSB Call Report submission | [NMLS preparer / Accounting] | Reconciliation workpaper (MSB fields to GL/ledger); pre-submission checklist with sign-off | D / I / O |
-| **MTL-REG-02** | MSB Call Report submission | Submission is reviewed and approved by designated person; restatement/escalation per policy | Per **Financial Reporting Policy**: (1) Designated **reviewer/approver** reviews the MSB Call Report (and reconciliation in MTL-REG-01) before submission. (2) If the report includes a **material restatement**, **material error**, or other **material matter**, escalate to a Board member before submission. Document review and any escalation. | Example: Q1 2026 report prepared. Reviewer confirms FC220, TA90/100, ST90/100 tie to GL and transaction ledger. No restatement → approve and submit. If a prior quarter were being restated, escalation to Board per policy before submitting. | Every quarter | [Designated reviewer]; [NMLS filer] | Review sign-off; escalation log if applicable | D / I / O |
+---
+
+### MTL-REG-01 — MSB Call Report reconciliation to GL (internal)
+
+| | |
+|---|---|
+| **Process / account** | MSB Call Report (FC220, TA90/100, ST90/100) |
+| **Source type** | Internal |
+| **Frequency** | Every quarter before MSB Call Report submission |
+| **Owner** | [NMLS preparer / Accounting] |
+| **Status** | D / I / O |
+
+**Objective:** Figures in the MSB Call Report agree to the general ledger and supporting schedules.
+
+**Description:** Before NMLS submission, reconcile key MSB Call Report fields to GL and workpapers:
+- **FC220** (outstanding stored value) = total GL stored value liability (Buyer Stored Value Liability + Merchant Stored Value Liability; confirm with Legal/Compliance whether both are included in FC220 or reported separately — see process narrative §8 open items)
+- **TA90/TA100** = count/sum of buyer funding transactions for the quarter from transaction ledger
+- **ST90/ST100** = same by Buyer state
+- **PI10/PI120** = NetSuite FBO account balance
+
+Document in a pre-submission checklist or reconciliation.
+
+**Example:** Q1 2026 report: FC220 = $550K must equal total GL stored value liability (Buyer $300K + Merchant $250K, or buyer-only if Merchant SV is classified differently — confirm with Legal/Compliance before first operational filing). TA90 = 15,000 and TA100 = $1.2M must equal count and sum of all completed buyer funding transactions in the quarter. ST90 for PA = 3,000 must equal count of those where buyer_state = PA.
+
+**Evidence:** Reconciliation workpaper (MSB fields to GL/ledger); pre-submission checklist with sign-off.
+
+---
+
+### MTL-REG-02 — MSB Call Report review and approval
+
+| | |
+|---|---|
+| **Process / account** | MSB Call Report submission |
+| **Source type** | Internal / governance |
+| **Frequency** | Every quarter |
+| **Owner** | [Designated reviewer]; [NMLS filer] |
+| **Status** | D / I / O |
+
+**Objective:** Submission is reviewed and approved by a designated person; material matters are escalated per policy.
+
+**Description:** Per Financial Reporting Policy:
+1. Designated reviewer/approver reviews the MSB Call Report (and reconciliation in MTL-REG-01) before submission.
+2. If the report includes a material restatement, material error, or other material matter, escalate to a Board member before submission.
+
+Document review and any escalation.
+
+**Example:** Q1 2026 report prepared. Reviewer confirms FC220, TA90/100, ST90/100 tie to GL and transaction ledger. No restatement → approve and submit. If a prior quarter were being restated, escalation to Board per policy before submitting.
+
+**Evidence:** Review sign-off; escalation log if applicable.
+
+---
 
 ### 4a. MSB / transaction volume – reconciliation to third party
 
-| Control ID | Process / account | Control objective | Control description | Example MTL transaction | Frequency | Owner | Evidence | Status |
-|------------|-------------------|-------------------|---------------------|-------------------------|-----------|--------|----------|--------|
-| **MTL-REG-03** | Buyer issuance volume (TA90, TA100) and card settlement inflows | Buyer funding volume and card settlement inflows are independently verified by third-party reports | **(1) Buyer fundings:** Reconcile **TA90 (count) and TA100 (dollar sum)** of Shop Pay Wallet Balance ACH fundings to **bank or processor ACH funding report** (credits to FBO from buyer ACH). **(2) Card settlements:** Reconcile **card settlement inflows** to FBO (which fund Merchant Stored Value Liability) to **payment partner settlement report**, once the MSB reporting classification of card settlements is confirmed with Legal/Compliance. Document and resolve variances (timing, fees, etc.) for both. | Q1 2026 buyer fundings: Internal ledger 15,000 fundings, $1.2M. Bank ACH funding report 15,000 credits, $1.198M ($2K timing difference — documented). Card settlements: Payment partner settlement report shows $5M settled to FBO; Merchant SV Liability shows $5M card settlement credits — reconciled. | Every quarter before MSB submission | [Accounting preparer] | Reconciliation workpaper (TA90/TA100 vs bank/processor report; card settlements vs payment partner settlement report); variance explanation | D / I / O |
-| **MTL-REG-04** | Merchant payout volume | Merchant payouts from FBO are independently verified by payment partner payout report | Reconcile **Merchant Stored Value Liability payout debits** (dollar amount and optionally count) to **payment partner payout report** — being the outflows from FBO to merchant external banks (process narrative §3.8). Note: Shop Dollars payments (§3.2) are internal FBO transfers between Buyer and Merchant wallets and do not correspond to this external payout report. Document timing differences and reconciling items. | Q1 2026: Merchant payout ledger shows $3M in merchant payouts (Merchant SV Liability debited, FBO Cash credited). Payment partner payout report shows $3M paid out to merchant external banks (or $2.997M with timing). Recon documents alignment and explains variance. | Every quarter (or monthly when volume is material) | [Accounting preparer] | Reconciliation workpaper (Merchant SV payout ledger vs partner payout report) | D / I / O |
+---
+
+### MTL-REG-03 — Buyer funding volume and card settlement inflows (third party)
+
+| | |
+|---|---|
+| **Process / account** | Buyer issuance volume (TA90, TA100) and card settlement inflows |
+| **Source type** | **Third party** — bank/processor ACH report; payment partner settlement report |
+| **Frequency** | Every quarter before MSB submission |
+| **Owner** | [Accounting preparer] |
+| **Status** | D / I / O |
+
+**Objective:** Buyer funding volume and card settlement inflows are independently verified by third-party reports.
+
+**Description:**
+1. **Buyer fundings:** Reconcile TA90 (count) and TA100 (dollar sum) of Shop Pay Wallet Balance ACH fundings to the bank or processor ACH funding report (credits to FBO from buyer ACH).
+2. **Card settlements:** Reconcile card settlement inflows to FBO (which fund Merchant Stored Value Liability) to the payment partner settlement report, once the MSB reporting classification of card settlements is confirmed with Legal/Compliance.
+
+Document and resolve variances (timing, fees, etc.) for both.
+
+**Example:**
+- *Buyer fundings:* Internal ledger 15,000 fundings, $1.2M. Bank ACH funding report 15,000 credits, $1.198M ($2K timing difference — documented).
+- *Card settlements:* Payment partner settlement report shows $5M settled to FBO; Merchant SV Liability shows $5M card settlement credits — reconciled.
+
+**Evidence:** Reconciliation workpaper (TA90/TA100 vs bank/processor report; card settlements vs payment partner settlement report); variance explanation.
+
+---
+
+### MTL-REG-04 — Merchant payout volume (third party)
+
+| | |
+|---|---|
+| **Process / account** | Merchant payout volume |
+| **Source type** | **Third party** — payment partner payout report |
+| **Frequency** | Every quarter (or monthly when volume is material) |
+| **Owner** | [Accounting preparer] |
+| **Status** | D / I / O |
+
+**Objective:** Merchant payouts from FBO are independently verified by the payment partner payout report.
+
+**Description:** Reconcile Merchant Stored Value Liability payout debits (dollar amount and optionally count) to the payment partner payout report — being the outflows from FBO to merchant external banks (process narrative §3.8). Note: Shop Dollars payments (§3.2) are internal FBO transfers between Buyer and Merchant wallets and do not correspond to this external payout report. Document timing differences and reconciling items.
+
+**Example:** Q1 2026: Merchant payout ledger shows $3M in merchant payouts (Merchant SV Liability debited, FBO Cash credited). Payment partner payout report shows $3M paid out to merchant external banks (or $2.997M with timing). Recon documents alignment and explains variance.
+
+**Evidence:** Reconciliation workpaper (Merchant SV payout ledger vs partner payout report).
 
 ---
 
 ## 5. Segregation of duties and access
 
-| Control ID | Process / account | Control objective | Control description | Example MTL transaction | Frequency | Owner | Evidence | Status |
-|------------|-------------------|-------------------|---------------------|-------------------------|-----------|--------|----------|--------|
-| **MTL-SOD-01** | All MTL financial processes | No single person can initiate, record, reconcile, and approve the same flow | Document and enforce **role split**: (1) **Preparer** – runs reports, prepares reconciliations, drafts MSB Call Report. (2) **Reviewer** – reviews reconciliations and report. (3) **Approver** – approves submission (or delegates per policy). (4) **NMLS filer** – submits in NMLS (may be same as approver but not same as sole preparer for same report). For journal entries: person who posts is different from person who approves, where feasible. | Example: Person A prepares Buyer and Merchant liability reconciliations and MSB Call Report; Person B reviews and approves; Person B (or designated filer) submits to NMLS. Person A cannot submit without B's review. | Ongoing; reviewed when roles change | [Management / Compliance] | Role matrix (names/roles); access review log | D / I / O |
-| **MTL-SOD-02** | Transaction / ledger systems | Access to systems that can change financial data or submit reports is limited and reviewed | **Access controls**: Only authorized personnel have access to (a) post or adjust stored value liabilities (Buyer or Merchant) or revenue in the GL, (b) modify transaction data that feeds liability/TA/ST, (c) submit MSB Call Report in NMLS. Periodic **access review** (e.g. quarterly or at role change). | Example: Only designated accounting and product support roles can affect Shop Dollars or Merchant wallet balances or reporting data; NMLS credentials limited to designated filer(s). Access list reviewed quarterly. | At least quarterly access review; when roles change | [IT or process owner; Management] | Access list; access review sign-off | D / I / O |
+---
+
+### MTL-SOD-01 — Segregation of duties for MTL processes
+
+| | |
+|---|---|
+| **Process / account** | All MTL financial processes |
+| **Source type** | Process / governance |
+| **Frequency** | Ongoing; reviewed when roles change |
+| **Owner** | [Management / Compliance] |
+| **Status** | D / I / O |
+
+**Objective:** No single person can initiate, record, reconcile, and approve the same flow.
+
+**Description:** Document and enforce role split:
+1. **Preparer** — runs reports, prepares reconciliations, drafts MSB Call Report.
+2. **Reviewer** — reviews reconciliations and report.
+3. **Approver** — approves submission (or delegates per policy).
+4. **NMLS filer** — submits in NMLS (may be same as approver but not same as sole preparer for same report).
+
+For journal entries: person who posts is different from person who approves, where feasible.
+
+**Example:** Person A prepares Buyer and Merchant liability reconciliations and MSB Call Report; Person B reviews and approves; Person B (or designated filer) submits to NMLS. Person A cannot submit without B's review.
+
+**Evidence:** Role matrix (names/roles); access review log.
+
+---
+
+### MTL-SOD-02 — System access controls
+
+| | |
+|---|---|
+| **Process / account** | Transaction / ledger systems |
+| **Source type** | Process / governance |
+| **Frequency** | At least quarterly access review; when roles change |
+| **Owner** | [IT or process owner; Management] |
+| **Status** | D / I / O |
+
+**Objective:** Access to systems that can change financial data or submit reports is limited and reviewed.
+
+**Description:** Access controls: only authorized personnel have access to (a) post or adjust stored value liabilities (Buyer or Merchant) or revenue in the GL, (b) modify transaction data that feeds liability/TA/ST, (c) submit MSB Call Report in NMLS. Periodic access review (e.g. quarterly or at role change).
+
+**Example:** Only designated accounting and product support roles can affect Shop Dollars or Merchant wallet balances or reporting data; NMLS credentials limited to designated filer(s). Access list reviewed quarterly.
+
+**Evidence:** Access list; access review sign-off.
 
 ---
 
 ## 6. Change management
 
-| Control ID | Process / account | Control objective | Control description | Example MTL transaction | Frequency | Owner | Evidence | Status |
-|------------|-------------------|-------------------|---------------------|-------------------------|-----------|--------|----------|--------|
-| **MTL-CHG-01** | Calculation logic, mappings, reports | Changes that affect liability, revenue, or MSB reporting are documented and reviewed before go-live | **Change process**: Any change to (a) how Buyer or Merchant stored value liability or revenue is calculated, (b) mapping from product/ledger to GL or to MSB Call Report fields, or (c) logic of reports used for close or submission must be **documented** (what changed, why) and **reviewed/approved** by a designated person (e.g. Accounting lead) before production. Where applicable, test with sample MTL transactions. | Example: New product feature adds a "partial redemption" (e.g. use $10 of $50 Buyer balance). Change to Buyer SV Liability calculation and to TA/ST logic is documented; Accounting reviews and approves before release; post-release spot-check that a $10 Shop Dollars payment reduces Buyer SV Liability by $10 and increases Merchant SV Liability by $10. | Per change | [Product/Eng for build]; [Accounting for review] | Change log; review/approval; test results if applicable | D / I / O |
+---
+
+### MTL-CHG-01 — Change management for calculation logic and mappings
+
+| | |
+|---|---|
+| **Process / account** | Calculation logic, mappings, reports |
+| **Source type** | Process / governance |
+| **Frequency** | Per change |
+| **Owner** | [Product/Eng for build]; [Accounting for review] |
+| **Status** | D / I / O |
+
+**Objective:** Changes that affect liability, revenue, or MSB reporting are documented and reviewed before go-live.
+
+**Description:** Any change to (a) how Buyer or Merchant stored value liability or revenue is calculated, (b) mapping from product/ledger to GL or to MSB Call Report fields, or (c) logic of reports used for close or submission must be documented (what changed, why) and reviewed/approved by a designated person (e.g. Accounting lead) before production. Where applicable, test with sample MTL transactions.
+
+**Example:** New product feature adds a "partial redemption" (e.g. use $10 of $50 Buyer balance). Change to Buyer SV Liability calculation and to TA/ST logic is documented; Accounting reviews and approves before release; post-release spot-check that a $10 Shop Dollars payment reduces Buyer SV Liability by $10 and increases Merchant SV Liability by $10.
+
+**Evidence:** Change log; review/approval; test results if applicable.
 
 ---
 
