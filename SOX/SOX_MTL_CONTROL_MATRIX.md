@@ -35,17 +35,105 @@ Many of the controls below reconcile **internal** sources (e.g. GL to transactio
 
 ## 1. Stored value liability (Buyer and Merchant wallets)
 
-| Control ID | Process / account | Control objective | Control description | Example MTL transaction | Frequency | Owner | Evidence | Status |
-|------------|-------------------|-------------------|---------------------|-------------------------|-----------|--------|----------|--------|
-| **MTL-SV-01** | Stored value liability (both wallets) | Both stored value liabilities are completely and accurately recorded from all transaction events | Perform two separate reconciliations at a defined point in time: **(1) Buyer Stored Value Liability:** Reconcile GL balance to the sum of individual Buyer balances in the product system (or to a net rollforward: opening + fundings + Case A refunds − Shop Dollars payments − withdrawals = closing). **(2) Merchant Stored Value Liability:** Reconcile GL balance to the sum of individual Merchant balances (or to a net rollforward: opening + card settlements + Shop Dollars transfers in − merchant payouts − Case A refunds out − Case B refunds = closing). Investigate and resolve variances above a set threshold for each liability. | Period-end: GL Buyer SV Liability $300K reconciles to sum of all Buyer balances in product system $300K. GL Merchant SV Liability $250K reconciles to sum of all Merchant balances $250K. Any variance investigated and documented per threshold. | At least monthly (e.g. after close); before quarter-end close and before MSB Call Report submission | [Accounting preparer] | Signed reconciliation for each liability (GL vs transaction ledger / balance rollforward); variance log and resolution notes | D / I / O |
-| **MTL-SV-02** | Stored value liability (both wallets) | Individual transactions are recorded in the correct period and amount across both wallets | Review a sample of **transactions across both wallets** (by date and amount) to confirm they hit the correct period: buyer ACH fundings, Shop Dollars payments (internal transfers), card settlements, merchant payouts, and refunds (Case A and Case B). Focus on period-end cut-off (e.g. transactions near quarter-end). Confirm amounts agree to source (product ledger). | Buyer example: "Buyer C funded $100 Shop Dollars on 3/31/26 11:58 PM UTC" — confirm included in Q1 2026 Buyer SV Liability and in Q1 MSB Call Report (TA90/TA100, ST90/ST100), not Q2. Merchant example: "Card settlement $500 to Merchant D on 3/31/26" — confirm included in Q1 Merchant SV Liability, not Q2. | Monthly or quarterly sample; mandatory for quarter-end close | [Accounting reviewer] | Sample selection log; evidence that each sampled transaction is in correct period and amount; reviewer sign-off | D / I / O |
-| **MTL-SV-03** | Stored value liability (both wallets) | Total liability movement across both wallets is understood and reviewed by management | Designated **management reviewer** reviews the stored value liability rollforward for **both wallets** and approves before financial close and/or regulatory submission. **Buyer rollforward:** opening + fundings + Case A refunds − Shop Dollars payments − withdrawals − breakage = closing. **Merchant rollforward:** opening + card settlements + Shop Dollars transfers in − merchant payouts − Case A refunds out − Case B refunds = closing. | Buyer wallet: Opening $250K; +$200K fundings; −$100K Shop Dollars payments; −$50K withdrawals = $300K closing. Merchant wallet: Opening $200K; +$100K card settlements; +$100K Shop Dollars transfers in; −$150K merchant payouts = $250K closing. Management reviews both rollforwards and signs off. | Before each quarter-end close and before MSB Call Report submission | [Designated manager, e.g. Accounting lead] | Signed management review memo or checklist; reference to both rollforwards and combined total | D / I / O |
+---
+
+### MTL-SV-01 — Liability reconciliation (internal)
+
+| | |
+|---|---|
+| **Process / account** | Stored value liability (both wallets) |
+| **Source type** | Internal |
+| **Frequency** | At least monthly; before quarter-end close and before MSB Call Report submission |
+| **Owner** | [Accounting preparer] |
+| **Status** | D / I / O |
+
+**Objective:** Both stored value liabilities are completely and accurately recorded from all transaction events.
+
+**Description:** Perform two separate reconciliations at each period-end:
+
+1. **Buyer Stored Value Liability** — Reconcile GL balance to the sum of individual Buyer balances in the product system, or to a net rollforward:
+   > Opening + fundings + Case A refunds − Shop Dollars payments − withdrawals = closing
+
+2. **Merchant Stored Value Liability** — Reconcile GL balance to the sum of individual Merchant balances in the product system, or to a net rollforward:
+   > Opening + card settlements + Shop Dollars transfers in − merchant payouts − Case A refunds out − Case B refunds = closing
+
+Investigate and resolve variances above a set threshold for each liability separately.
+
+**Example:** Period-end: GL Buyer SV Liability $300K reconciles to sum of all Buyer balances in product system $300K. GL Merchant SV Liability $250K reconciles to sum of all Merchant balances $250K. Any variance investigated and documented per threshold.
+
+**Evidence:** Signed reconciliation for each liability (GL vs transaction ledger / balance rollforward); variance log and resolution notes.
+
+---
+
+### MTL-SV-02 — Transaction cut-off (internal)
+
+| | |
+|---|---|
+| **Process / account** | Stored value liability (both wallets) |
+| **Source type** | Internal |
+| **Frequency** | Monthly or quarterly sample; mandatory for quarter-end close |
+| **Owner** | [Accounting reviewer] |
+| **Status** | D / I / O |
+
+**Objective:** Individual transactions are recorded in the correct period and amount across both wallets.
+
+**Description:** Review a sample of transactions across both wallets (by date and amount) to confirm they are recorded in the correct period: buyer ACH fundings, Shop Dollars payments (internal transfers), card settlements, merchant payouts, and refunds (Case A and Case B). Focus on period-end cut-off — transactions near quarter-end. Confirm amounts agree to source (product ledger).
+
+**Example:**
+- *Buyer:* "Buyer C funded $100 Shop Dollars on 3/31/26 11:58 PM UTC" — confirm included in Q1 2026 Buyer SV Liability and in Q1 MSB Call Report (TA90/TA100, ST90/ST100), not Q2.
+- *Merchant:* "Card settlement $500 to Merchant D on 3/31/26" — confirm included in Q1 Merchant SV Liability, not Q2.
+
+**Evidence:** Sample selection log; evidence that each sampled transaction is in correct period and amount; reviewer sign-off.
+
+---
+
+### MTL-SV-03 — Management review of liability rollforward (internal)
+
+| | |
+|---|---|
+| **Process / account** | Stored value liability (both wallets) |
+| **Source type** | Internal |
+| **Frequency** | Before each quarter-end close and before MSB Call Report submission |
+| **Owner** | [Designated manager, e.g. Accounting lead] |
+| **Status** | D / I / O |
+
+**Objective:** Total liability movement across both wallets is understood and reviewed by management.
+
+**Description:** Designated management reviewer reviews the stored value liability rollforward for both wallets and approves before financial close and/or regulatory submission:
+
+- **Buyer rollforward:** Opening + fundings + Case A refunds − Shop Dollars payments − withdrawals − breakage = closing
+- **Merchant rollforward:** Opening + card settlements + Shop Dollars transfers in − merchant payouts − Case A refunds out − Case B refunds = closing
+
+**Example:**
+- *Buyer wallet:* Opening $250K + $200K fundings − $100K Shop Dollars payments − $50K withdrawals = $300K closing.
+- *Merchant wallet:* Opening $200K + $100K card settlements + $100K Shop Dollars transfers in − $150K merchant payouts = $250K closing.
+- Management reviews both rollforwards and signs off.
+
+**Evidence:** Signed management review memo or checklist; reference to both rollforwards and combined total.
+
+---
 
 ### 1a. Stored value liability – reconciliation to third party
 
-| Control ID | Process / account | Control objective | Control description | Example MTL transaction | Frequency | Owner | Evidence | Status |
-|------------|-------------------|-------------------|---------------------|-------------------------|-----------|--------|----------|--------|
-| **MTL-SV-04** | Stored value liability (total) | Total stored value liability is independently verified by third-party FBO bank balance | Reconcile **total stored value liability (GL)** — being the sum of Buyer Stored Value Liability and Merchant Stored Value Liability — to **FBO account balance per bank statement** (third party). Document known timing/operating differences (e.g. ACH in-transit, card settlements in-transit, accrued interest not yet swept). Investigate unexplained variances above threshold. | Month-end: GL Buyer SV Liability $300K + Merchant SV Liability $250K = $550K total. FBO bank statement balance $549K; difference $1K = ACH in transit (documented). Recon workpaper shows total liability vs FBO bank with clear explanation of each timing item. | At least monthly; before quarter-end and MSB submission | [Accounting preparer] | Signed reconciliation (total liability vs FBO bank statement); variance log with explanations | D / I / O |
+---
+
+### MTL-SV-04 — Total liability vs FBO bank balance (third party)
+
+| | |
+|---|---|
+| **Process / account** | Stored value liability (total) |
+| **Source type** | **Third party** — FBO bank statement |
+| **Frequency** | At least monthly; before quarter-end and MSB submission |
+| **Owner** | [Accounting preparer] |
+| **Status** | D / I / O |
+
+**Objective:** Total stored value liability is independently verified by the third-party FBO bank balance.
+
+**Description:** Reconcile **total stored value liability (GL)** — the sum of Buyer Stored Value Liability and Merchant Stored Value Liability — to the **FBO account balance per bank statement** (third party). Document all known timing and operating differences (e.g. ACH in-transit, card settlements in-transit, accrued interest not yet swept). Investigate unexplained variances above threshold.
+
+**Example:** Month-end: GL Buyer SV Liability $300K + Merchant SV Liability $250K = $550K total. FBO bank statement balance $549K; difference $1K = ACH in transit (documented). Recon workpaper shows total liability vs FBO bank with clear explanation of each timing item.
+
+**Evidence:** Signed reconciliation (total liability vs FBO bank statement); variance log with explanations.
 
 ---
 
