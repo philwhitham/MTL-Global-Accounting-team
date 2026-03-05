@@ -3,7 +3,7 @@
 **Entity:** Shopify Financial Services Inc. (UK) / Latvian applicant entity (EU)
 **Purpose:** Requirements analysis to support minimal-compliance wind-down plan design for UK and EU/Latvia licensing applications
 **Last updated:** March 2026
-**Status:** Draft — Latvian Reg. 270 Annex 10 full text (Latvian-language) not yet reviewed; see outstanding action at end of document
+**Status:** Draft
 
 ---
 
@@ -34,7 +34,7 @@ The document is structured in three sections:
 | TR22/1 – Observations on Wind-Down Planning: Liquidity, Triggers & Intragroup Dependencies (April 2022) | FCA | Specific observations on deficiencies in liquidity modelling, trigger design, and intragroup analysis |
 | Multi-Firm Review – Risk Management and Wind-Down Planning at E-Money and Payment Firms | FCA | Good practice benchmarks and common deficiencies observed across PI/EMI firms |
 | Policy Statement PS25/12 – Changes to the Safeguarding Regime (August 2025) | FCA | Resolution Pack requirements — effective 7 May 2026; separate from wind-down plan |
-| Bank of Latvia Regulation No. 270 (5 December 2022) | Latvijas Banka | Licensing and documentation requirements for PIs and EMIs in Latvia, including Annex 10 (business continuity / wind-down) |
+| Bank of Latvia Regulation No. 270 (adopted 29 January 2024; in force 2 February 2024) | Latvijas Banka | Licensing and documentation requirements for PIs and EMIs in Latvia, including Annex 10 (business continuity / wind-down). Available at likumi.lv ID 349500. |
 | Law on Payment Services and Electronic Money (Latvia) | Latvijas Banka | Primary legislation underpinning Reg. 270 |
 
 ---
@@ -300,13 +300,27 @@ These are primarily documentary and structural requirements for the Latvia appli
 
 | | |
 |---|---|
-| **Latvia source** | Reg. 270 licensing process |
+| **Latvia source** | Reg. 270 licensing process; Annex 10 (likumi.lv ID 349500) |
 
-**Description:** The wind-down and business continuity content must be presented as **Annex 10** within the Reg. 270 licensing application package. Reg. 270 prescribes a specific numbered annex format — content cannot simply be lifted from the UK wind-down plan document. The Annex 10 must include: description of continuity arrangements, effective emergency plans, and description of regular verification and review procedures. The full Latvian-language text of Annex 10 (including all sub-items beyond Item 5) must be reviewed directly from [vestnesis.lv](https://www.vestnesis.lv) before the Latvia submission is finalised.
+**Description:** The wind-down and business continuity content must be presented as **Annex 10** within the Reg. 270 licensing application package. Reg. 270 prescribes a specific numbered annex format — content cannot simply be lifted from the UK wind-down plan document.
+
+Annex 10 is formally titled: *"Komercdarbības nepārtrauktības nodrošināšanas pasākumu apraksts"* — **Description of Business Continuity Measures**. The introductory sentence requires: *"The applicant shall submit a description of the institution's business continuity measures, which shall include at least the following information."*
+
+**Annex 10 contains exactly 5 mandatory items (verbatim English translation from Latvian):**
+
+| Item | Requirement |
+|---|---|
+| 1 | Business (functions and processes) impact analysis and the business processes that affect the applicant's overall business, and the operational recovery strategy, recovery scenarios and priorities, including recovery time, recovery level, and protected assets |
+| 2 | An operational continuity plan, including for information systems, developed taking into account the requirements of Latvijas Banka regulations in the field of information systems security, and including an explanation of how the applicant will act in the event of significant business continuity problems and disruptions, such as outages of core systems, loss of core data, inability to access premises, and unavailability of key persons |
+| 3 | A description of the applicant's plan for creating and storing backup copies of information system data |
+| 4 | A description of how frequently the applicant plans to test the business continuity and recovery plans and evaluate their operational effectiveness, including how the results of testing will be documented and evaluated |
+| 5 | A description of the planned risk mitigation measures in the event that the applicant's provision of payment services or electronic money services is terminated, in order to ensure the execution of pending operations (including payments) and the termination of existing contracts, as well as in the event of prolonged downtime |
+
+**Note:** There are no further items beyond Item 5. Item 5 is the only provision in Reg. 270 that expressly addresses wind-down. No separate wind-down annex exists in this regulation.
 
 **What needs to be produced:**
-1. Annex 10 document formatted per Reg. 270 requirements
-2. Structured per the numbered sub-items of Annex 10 (Item 5 confirmed to address: termination measures, pending operations, contract termination, prolonged downtime)
+1. Annex 10 document with responses to all 5 items above
+2. Formatted per the Reg. 270 numbered structure (not a free-form document)
 3. Cross-referenced to the full Latvia application package
 
 ---
@@ -337,13 +351,12 @@ These are primarily documentary and structural requirements for the Latvia appli
 
 ---
 
-## Outstanding actions before Latvia section can be finalised
+## Outstanding actions
 
 | Action | Owner | Notes |
 |---|---|---|
-| Obtain and review full Latvian-language text of Reg. 270 Annex 10 | Legal / Regulatory counsel | Available at vestnesis.lv — search "Latvijas Bankas noteikumi Nr. 270". Required to confirm all sub-items beyond Item 5 before finalising the Latvia annex structure. |
-| Confirm licence type for Latvia entity | Legal / Regulatory counsel | Reg. 270 applies to both licensed and registered PIs/EMIs; required annexes differ by category. Full annex set (1–16) applies to licensed entities; registered entities require Annexes 3, 4, 6, 10, 11, 13, 14, 15 only. |
+| Confirm licence type for Latvia entity | Legal / Regulatory counsel | Reg. 270 applies to both licensed and registered PIs/EMIs; required annexes differ by category. Full annex set (1–15) applies to licensed entities; registered entities require Annexes 3, 4, 6, 10, 11, 13, 14, 15 only. Licence type determines which annexes are in scope for the application package. |
 
 ---
 
-*Document prepared based on publicly available regulatory sources. All claims are fact-based and sourced to the specific regulatory documents identified in the Key Regulatory Sources table above. The description of Reg. 270 Annex 10 Item 5 is consistent with Latvijas Banka's published English-language application materials but the full Latvian-language sub-item text has not been independently verified in English.*
+*Document prepared based on publicly available regulatory sources. All claims are fact-based and sourced to the specific regulatory documents identified in the Key Regulatory Sources table above. Reg. 270 Annex 10 items 1–5 are translated from the authoritative Latvian-language text at likumi.lv ID 349500.*
