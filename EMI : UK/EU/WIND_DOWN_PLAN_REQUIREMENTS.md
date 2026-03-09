@@ -1,9 +1,9 @@
-# Wind-Down Plan Requirements — UK (FCA) and EU/Latvia (Bank of Latvia Reg. 270)
+# Wind-Down Plan Requirements — UK (FCA) and EU/Luxembourg (CSSF)
 
-**Entity:** Shopify Financial Services Inc. (UK) / Latvian applicant entity (EU)
-**Purpose:** Requirements analysis to support minimal-compliance wind-down plan design for UK and EU/Latvia licensing applications
+**Entity:** Shopify Financial Services Inc. (UK) / Luxembourg EMI applicant entity (EU)
+**Purpose:** Requirements analysis to support minimal-compliance wind-down plan design for UK and Luxembourg EMI licensing applications
 **Last updated:** March 2026
-**Status:** Draft
+**Status:** Draft — see flagged uncertainties at end of document
 
 ---
 
@@ -12,13 +12,15 @@
 This document maps the wind-down plan requirements of two regulators:
 
 - **UK:** Financial Conduct Authority (FCA) — Payment Institution / EMI authorisation under the Payment Services Regulations 2017 and Electronic Money Regulations 2011
-- **EU/Latvia:** Latvijas Banka (Bank of Latvia) — Payment Institution / EMI authorisation under Bank of Latvia Regulation No. 270, governed by the Law on Payment Services and Electronic Money
+- **EU/Luxembourg:** Commission de Surveillance du Secteur Financier (CSSF) — EMI authorisation under the Law of 10 November 2009 on Payment Services (as amended by the Law of 20 July 2018 transposing PSD2), and EBA Guidelines on authorisation under PSD2 (EBA/GL/2017/09)
+
+**Important structural difference from Latvia:** The CSSF has no single regulatory instrument equivalent to Latvia's Regulation No. 270 Annex 10. Luxembourg's requirements are dispersed across the primary law, binding EBA guidelines, and three CSSF circulars. There is no CSSF-prescribed annex format for a standalone wind-down plan. This affects both how requirements are interpreted and how the deliverable document is structured for the Luxembourg submission.
 
 The document is structured in three sections:
 
 1. **Overlapping requirements** — elements required by both regulators; a single well-drafted section can satisfy both
-2. **UK-only requirements** — FCA-specific elements not expressly required by Reg. 270
-3. **Latvia-only requirements** — Reg. 270 structural/documentary elements not expressly required by the FCA
+2. **UK-only requirements** — FCA-specific elements not expressly required by the CSSF
+3. **Luxembourg-only requirements** — CSSF-specific elements not expressly required by the FCA
 
 **Design principle:** This is a minimal compliance initiative. The plan will be built to meet the requirements of both regulators and nothing more.
 
@@ -34,14 +36,17 @@ The document is structured in three sections:
 | TR22/1 – Observations on Wind-Down Planning: Liquidity, Triggers & Intragroup Dependencies (April 2022) | FCA | Specific observations on deficiencies in liquidity modelling, trigger design, and intragroup analysis |
 | Multi-Firm Review – Risk Management and Wind-Down Planning at E-Money and Payment Firms | FCA | Good practice benchmarks and common deficiencies observed across PI/EMI firms |
 | Policy Statement PS25/12 – Changes to the Safeguarding Regime (August 2025) | FCA | Resolution Pack requirements — effective 7 May 2026; separate from wind-down plan |
-| Bank of Latvia Regulation No. 270 (adopted 29 January 2024; in force 2 February 2024) | Latvijas Banka | Licensing and documentation requirements for PIs and EMIs in Latvia, including Annex 10 (business continuity / wind-down). Available at likumi.lv ID 349500. |
-| Law on Payment Services and Electronic Money (Latvia) | Latvijas Banka | Primary legislation underpinning Reg. 270 |
+| Law of 10 November 2009 on Payment Services (as amended) | CSSF / Luxembourg | Primary Luxembourg legislation governing EMI/PI authorisation; transposition of PSD1, EMD2, and PSD2 |
+| EBA/GL/2017/09 – Guidelines on Information to be Provided for Authorisation under PSD2 (11 July 2017) | EBA (applied by CSSF) | Binding authorisation information requirements applied by the CSSF; the primary instrument governing what must be submitted in the EMI application |
+| Circular CSSF 26/906 – Central Administration, Internal Governance and Risk Management (20 January 2026) | CSSF | New governance framework for PIs and EMIs; effective 30 June 2026; requires Board-level business continuity and crisis management as an ongoing obligation |
+| Circular CSSF 20/750 – ICT and Security Risk Management | CSSF | ICT-focused business continuity plan requirement; implements EBA ICT guidelines |
+| Circular CSSF 22/806 – Outsourcing Arrangements (as amended by 25/883) | CSSF | Requires exit plans for each critical or important outsourced function |
 
 ---
 
 ## Section 1 — Overlapping requirements (both jurisdictions)
 
-A single plan section addressing each of these requirements will satisfy both the FCA and Latvijas Banka, subject to Latvia's annex formatting requirements (see Section 3).
+A single plan section addressing each of these requirements will satisfy both the FCA and the CSSF. Unlike Latvia's Reg. 270, the CSSF has no prescribed annex format — the Luxembourg submission can reference the same underlying document.
 
 ---
 
@@ -50,9 +55,9 @@ A single plan section addressing each of these requirements will satisfy both th
 | | |
 |---|---|
 | **FCA source** | "Our Approach" paras 3.73–3.76 |
-| **Latvia source** | Reg. 270 Annex 6 (safeguarding of user funds) |
+| **CSSF source** | Circular CSSF 26/906, Chapter 8 (safeguarding requirements); EBA/GL/2017/09 |
 
-**Description:** Records must allow the regulator or an insolvency practitioner to identify each customer's balance and return it without needing to reconstruct data from scratch. For Shopify FS this means individual buyer wallet balances and individual merchant wallet balances must be identifiable at all times from a single authoritative source. The FCA has emphasised this is the **primary focus** of the PI/EMI wind-down plan — unlike general firms, the defining risk for a payment firm is delay in returning customer money.
+**Description:** Records must allow the regulator or an insolvency practitioner to identify each customer's balance and return it without needing to reconstruct data from scratch. For Shopify FS this means individual buyer wallet balances and individual merchant wallet balances must be identifiable at all times from a single authoritative source. The FCA has emphasised this is the **primary focus** of the PI/EMI wind-down plan. The CSSF addresses this through Circular 26/906 Chapter 8, which requires daily reconciliation of client funds, strict legal segregation in dedicated safeguarding accounts, and an obligation to safeguard client funds "at all times" — including in adverse scenarios.
 
 **What needs to be produced:**
 1. Description of the system of record for individual wallet balances (Standalone Ledger / product system)
@@ -67,14 +72,15 @@ A single plan section addressing each of these requirements will satisfy both th
 | | |
 |---|---|
 | **FCA source** | WDPG; "Our Approach" paras 3.73–3.76 |
-| **Latvia source** | Reg. 270 Annex 10 |
+| **CSSF source** | Circular CSSF 26/906 (Board obligation for business continuity and crisis management); Circular CSSF 20/750 (ICT-focused BCP) |
 
-**Description:** A documented plan covering how the business continues to operate or winds down under defined stress scenarios, covering people, systems, and processes across all payment services. Emergency plans must be effective and supported by regular review procedures to confirm they remain fit for purpose.
+**Description:** A documented plan covering how the business continues to operate or winds down under defined stress scenarios, covering people, systems, and processes across all payment services. Emergency plans must be effective and supported by regular review procedures. Under Circular CSSF 26/906, the Board bears "overall responsibility for the PI/EMI and must ensure the sound and prudent management of the institution, the preservation of its continuity and the protection of its reputation." Management information systems must function in both normal and crisis conditions. Under Circular CSSF 20/750, BCPs must be based on Business Impact Analyses, cover extreme but plausible scenarios (including cyber-attack), and be tested periodically.
 
 **What needs to be produced:**
 1. Scenario library (minimum 3–5 plausible scenarios including: financial distress, loss of banking partner, IT failure, loss of key licence)
 2. Documented procedures for each scenario
-3. Record of testing and review cycles (frequency and responsible party)
+3. Record of testing and review cycles — frequency and responsible party
+4. Board-level approval of the plan (required under Circular 26/906)
 
 ---
 
@@ -83,15 +89,16 @@ A single plan section addressing each of these requirements will satisfy both th
 | | |
 |---|---|
 | **FCA source** | WDPG (processes element) |
-| **Latvia source** | Reg. 270 Annex 10 Item 5 (Latvian-language text only; description per Latvijas Banka application materials) |
+| **CSSF source** | Circular CSSF 22/806 Section 4.3.4 (outsourcing exit plans); EBA/GL/2017/09 |
 
-**Description:** Procedures to: (1) complete all pending payment transactions at point of wind-down without creating new obligations; (2) terminate contracts with merchants, buyers, banking partners, and technology providers in the correct sequence; (3) manage prolonged system downtime without leaving obligations unresolved. The FCA multi-firm review identified contract termination costs as a frequently underestimated liability in cashflow models.
+**Description:** Procedures to: (1) complete all pending payment transactions at point of wind-down without creating new obligations; (2) terminate contracts with merchants, buyers, banking partners, and technology providers in the correct sequence; (3) manage prolonged system downtime without leaving obligations unresolved. The FCA multi-firm review identified contract termination costs as a frequently underestimated liability. Circular CSSF 22/806 requires a specific exit plan for each critical or important outsourced function — this exit plan "shall allow the entity to exit without undue disruption to business activities, without limiting compliance with regulatory requirements, and without any detriment to the continuity and quality of the provision of services to clients."
 
 **What needs to be produced:**
 1. Register of all material contracts with termination notice periods and break costs
 2. Sequencing plan for contract terminations (which counterparties are terminated in which order)
 3. Procedure for completing in-flight transactions at point of closure
 4. Process for handling disputed or unresolved transactions during wind-down
+5. For each critical or important outsourced function: a dedicated exit plan per Circular CSSF 22/806 Section 4.3.4
 
 ---
 
@@ -100,15 +107,15 @@ A single plan section addressing each of these requirements will satisfy both th
 | | |
 |---|---|
 | **FCA source** | TR22/1; FG20/1 |
-| **Latvia source** | Reg. 270 Annex 10 (emergency plan activation criteria) |
+| **CSSF source** | Circular CSSF 26/906 (crisis management; Board obligation to ensure preservation of continuity) |
 
-**Description:** Defined conditions that would cause management to initiate a wind-down, supported by a monitoring framework to detect those conditions in advance. The FCA expects triggers to be specific and measurable — qualitative descriptions (e.g. "significant financial difficulty") are not sufficient. Triggers must be actively monitored with defined escalation paths and linked to the firm's risk appetite statement.
+**Description:** Defined conditions that would cause management to initiate a wind-down, supported by a monitoring framework to detect those conditions in advance. The FCA expects triggers to be specific and measurable — qualitative descriptions are not sufficient. Triggers must be actively monitored with defined escalation paths and linked to the firm's risk appetite statement. Under Circular CSSF 26/906, the CSSF requires "an appropriate response capability in the event of a crisis" — this requires pre-defined criteria for what constitutes a crisis and how the Board responds.
 
 **What needs to be produced:**
 1. Minimum 3–5 quantified triggers with defined threshold levels (amber early warning + red action threshold for each)
 2. Monitoring frequency and responsible owner for each trigger
-3. Escalation path from breach of trigger → board notification → wind-down decision
-4. Description of how triggers are reviewed and updated (minimum annually)
+3. Escalation path from breach of trigger → Board notification → wind-down decision
+4. Description of how triggers are reviewed and updated (minimum annually, and after any material business change)
 
 ---
 
@@ -117,9 +124,9 @@ A single plan section addressing each of these requirements will satisfy both th
 | | |
 |---|---|
 | **FCA source** | FCA multi-firm review; TR22/1 |
-| **Latvia source** | Reg. 270 Annex 11 (IT security policy) |
+| **CSSF source** | Circular CSSF 20/750 (ICT business continuity); Circular CSSF 26/906 |
 
-**Description:** Controls to ensure systems remain operational or fail safely during a wind-down period — covering cybersecurity, system access, data integrity, and continuity of critical processes. Must address: what happens to data after wind-down is complete; how system access is managed when staff numbers reduce; how third-party IT dependencies (e.g. Shopify Inc. shared infrastructure) would be managed. The FCA treats IT failure as a distinct wind-down trigger scenario.
+**Description:** Controls to ensure systems remain operational or fail safely during a wind-down period — covering cybersecurity, system access, data integrity, and continuity of critical processes. Must address: what happens to data after wind-down is complete; how system access is managed when staff numbers reduce; how third-party IT dependencies (e.g. Shopify Inc. shared infrastructure) would be managed. The FCA treats IT failure as a distinct wind-down trigger scenario. Circular CSSF 20/750 requires BCPs to protect and re-establish "the confidentiality, integrity, and availability" of business functions and information assets, and to demonstrate the ability to "sustain the viability of their businesses until critical operations are re-established."
 
 **What needs to be produced:**
 1. Description of critical IT systems and dependencies (including intragroup / Shopify Inc. dependencies)
@@ -135,14 +142,14 @@ A single plan section addressing each of these requirements will satisfy both th
 | | |
 |---|---|
 | **FCA source** | WDPG ("resources" element); multi-firm review |
-| **Latvia source** | Reg. 270 Annex 10 (continuity arrangements) |
+| **CSSF source** | Circular CSSF 26/906 (governance and organisational requirements; Board responsibility for sound management) |
 
-**Description:** Identification of the key people and third-party cooperation required to execute a wind-down. The FCA multi-firm review found that firms frequently underestimate people requirements — assuming staff will be available when in practice key staff may have already left. Must consider staff retention incentives during wind-down; identification of roles that cannot be vacated; external advisers already engaged or on retainer.
+**Description:** Identification of the key people and third-party cooperation required to execute a wind-down. The FCA multi-firm review found that firms frequently underestimate people requirements — assuming staff will be available when in practice key staff may have already left. Must consider staff retention incentives during wind-down; identification of roles that cannot be vacated; external advisers already engaged or on retainer. Circular CSSF 26/906 places overall responsibility on the Board for ensuring sound management of the institution, which includes ensuring adequate human resources are available in adverse scenarios.
 
 **What needs to be produced:**
 1. Named roles (not individuals) essential to wind-down execution
 2. Staff retention strategy (e.g. retention bonuses, extended notice periods)
-3. List of external parties required: legal counsel, insolvency practitioner, banking contacts, regulatory contacts
+3. List of external parties required: legal counsel, insolvency practitioner, banking contacts, CSSF and FCA regulatory contacts
 4. Plan for knowledge transfer if key staff depart before or during wind-down
 
 ---
@@ -152,14 +159,14 @@ A single plan section addressing each of these requirements will satisfy both th
 | | |
 |---|---|
 | **FCA source** | FCA multi-firm review |
-| **Latvia source** | Reg. 270 Annex 10 (continuity arrangements) |
+| **CSSF source** | Circular CSSF 26/906 (crisis management; Board obligation for reputation protection) |
 
-**Description:** A sequenced plan covering how and when merchants, buyers, regulators, banking partners, and other counterparties are notified. The FCA specifically requires the plan to address: notification sequence (regulator first, then counterparties, then customers); key messages for each audience; how customer complaints during wind-down are handled; and data retention obligations post-closure.
+**Description:** A sequenced plan covering how and when merchants, buyers, regulators, banking partners, and other counterparties are notified. The FCA specifically requires: notification sequence (regulator first, then counterparties, then customers); key messages for each audience; how customer complaints during wind-down are handled; and data retention obligations post-closure. Circular CSSF 26/906 requires the Board to protect the institution's reputation — a crisis communication plan is an implicit component of that obligation.
 
 **What needs to be produced:**
 1. Stakeholder map with notification sequence
-2. Draft communication templates for each stakeholder group (FCA / Latvijas Banka, merchants, buyers, banking partners, technology partners)
-3. Regulatory notification obligations and timelines (FCA must be notified promptly upon decision to wind down)
+2. Draft communication templates for each stakeholder group (FCA, CSSF, merchants, buyers, banking partners, technology partners)
+3. Regulatory notification obligations and timelines for both FCA and CSSF
 4. Customer complaint handling procedure during wind-down
 5. Data retention schedule post-closure
 
@@ -167,7 +174,7 @@ A single plan section addressing each of these requirements will satisfy both th
 
 ## Section 2 — UK-only requirements (FCA)
 
-These elements are expressly required by the FCA and have no direct equivalent in Reg. 270. They are required for the UK application only but should be documented in a way that does not conflict with the Latvia plan.
+These elements are expressly required by the FCA and have no confirmed equivalent in CSSF instruments. They are required for the UK application only.
 
 ---
 
@@ -275,7 +282,7 @@ These elements are expressly required by the FCA and have no direct equivalent i
 |---|---|
 | **FCA source** | PS25/12 — **effective 7 May 2026** |
 
-**Description:** A living document — **separate from the wind-down plan** — containing all information needed by a resolution authority or insolvency practitioner to identify and return safeguarded funds. Must be retrievable within 48 hours of a request. A named Senior Management Function (SMF) holder is accountable. Board approval required. Inaccuracies must be corrected within 5 business days of discovery.
+**Description:** A living document — **separate from the wind-down plan** — containing all information needed by a resolution authority or insolvency practitioner to identify and return safeguarded funds. Must be retrievable within 48 hours of a request. A named Senior Management Function (SMF) holder is accountable. Board approval required. Inaccuracies must be corrected within 5 business days of discovery. This is a UK-only obligation with no CSSF equivalent currently in force.
 
 **What needs to be produced:**
 1. Master document indexing all component documents within the Resolution Pack
@@ -290,64 +297,64 @@ These elements are expressly required by the FCA and have no direct equivalent i
 
 ---
 
-## Section 3 — Latvia-only requirements (Reg. 270)
+## Section 3 — Luxembourg-only requirements (CSSF)
 
-These are primarily documentary and structural requirements for the Latvia application package. They do not add substantive wind-down content beyond what is addressed in Sections 1 and 2, but they affect how the content must be packaged and formatted for the Latvijas Banka submission.
-
----
-
-### 3.1 Annex-based documentary structure
-
-| | |
-|---|---|
-| **Latvia source** | Reg. 270 licensing process; Annex 10 (likumi.lv ID 349500) |
-
-**Description:** The wind-down and business continuity content must be presented as **Annex 10** within the Reg. 270 licensing application package. Reg. 270 prescribes a specific numbered annex format — content cannot simply be lifted from the UK wind-down plan document.
-
-Annex 10 is formally titled: *"Komercdarbības nepārtrauktības nodrošināšanas pasākumu apraksts"* — **Description of Business Continuity Measures**. The introductory sentence requires: *"The applicant shall submit a description of the institution's business continuity measures, which shall include at least the following information."*
-
-**Annex 10 contains exactly 5 mandatory items (verbatim English translation from Latvian):**
-
-| Item | Requirement |
-|---|---|
-| 1 | Business (functions and processes) impact analysis and the business processes that affect the applicant's overall business, and the operational recovery strategy, recovery scenarios and priorities, including recovery time, recovery level, and protected assets |
-| 2 | An operational continuity plan, including for information systems, developed taking into account the requirements of Latvijas Banka regulations in the field of information systems security, and including an explanation of how the applicant will act in the event of significant business continuity problems and disruptions, such as outages of core systems, loss of core data, inability to access premises, and unavailability of key persons |
-| 3 | A description of the applicant's plan for creating and storing backup copies of information system data |
-| 4 | A description of how frequently the applicant plans to test the business continuity and recovery plans and evaluate their operational effectiveness, including how the results of testing will be documented and evaluated |
-| 5 | A description of the planned risk mitigation measures in the event that the applicant's provision of payment services or electronic money services is terminated, in order to ensure the execution of pending operations (including payments) and the termination of existing contracts, as well as in the event of prolonged downtime |
-
-**Note:** There are no further items beyond Item 5. Item 5 is the only provision in Reg. 270 that expressly addresses wind-down. No separate wind-down annex exists in this regulation.
-
-**What needs to be produced:**
-1. Annex 10 document with responses to all 5 items above
-2. Formatted per the Reg. 270 numbered structure (not a free-form document)
-3. Cross-referenced to the full Latvia application package
+These are requirements arising specifically from CSSF instruments that go beyond or differ from the FCA framework.
 
 ---
 
-### 3.2 Formal AML/CTF procedures (standalone annex)
+### 3.1 CSSF application form — EBA/GL/2017/09 business plan submission
 
 | | |
 |---|---|
-| **Latvia source** | Reg. 270 Annex 13 |
+| **CSSF source** | EBA/GL/2017/09 (applied by CSSF); CSSF EMI application form |
 
-**Description:** A dedicated AML/CTF procedures document submitted as Annex 13 — not embedded within other documents. For wind-down purposes, this must address how AML/CTF obligations continue to be met during a wind-down period (e.g. transaction monitoring, suspicious activity reporting obligations that persist after closure decision).
+**Description:** The Luxembourg EMI licensing application must be submitted using the CSSF's official EMI application form and must comply with EBA/GL/2017/09, which sets out the detailed information requirements for authorisation under PSD2. Unlike the FCA's standalone WDPG, the CSSF does not have a dedicated wind-down plan instrument. Wind-down and continuity content is expected to be embedded within the business plan submission. The CSSF application form must be downloaded directly from the CSSF website and reviewed to confirm whether it contains an explicitly labelled wind-down or continuity section.
 
 **What needs to be produced:**
-- Annex 13 document covering AML/CTF policies and procedures, including continuity of AML obligations during wind-down
+1. Review of the CSSF EMI application form (.docx, available at cssf.lu) to confirm whether an explicit wind-down plan section exists — this is an outstanding action (see below)
+2. Business plan submission per EBA/GL/2017/09 requirements, incorporating continuity and orderly exit content
+3. Programme of operations covering all payment services to be provided and how they would be wound down
 
 ---
 
-### 3.3 Sensitive payment data access controls
+### 3.2 Circular CSSF 26/906 compliance — effective 30 June 2026
 
 | | |
 |---|---|
-| **Latvia source** | Reg. 270 Annex 12 |
+| **CSSF source** | Circular CSSF 26/906 (20 January 2026) |
 
-**Description:** Documentation of controls governing access to sensitive payment data, submitted as Annex 12. For wind-down purposes, this must address how access to payment data is managed as staff numbers reduce and how access is fully revoked upon wind-down completion.
+**Description:** Effective 30 June 2026, all Luxembourg PIs and EMIs must comply with Circular CSSF 26/906 on Central Administration, Internal Governance and Risk Management. This circular requires the Board to approve and annually review guiding principles covering business continuity and crisis management. The Board bears overall responsibility for "the preservation of the institution's continuity." Annual compliance attestations signed by all members of the Management Body must be submitted to the CSSF. Chapter 8 introduces enhanced safeguarding requirements directly relevant to wind-down: daily reconciliation of client funds and strict legal segregation in dedicated safeguarding accounts.
 
 **What needs to be produced:**
-- Annex 12 document covering: access control framework for sensitive payment data; revocation procedures upon wind-down; audit trail requirements; post-wind-down data retention and destruction
+1. Board-approved guiding principles document covering business continuity and crisis management (per Circular 26/906)
+2. Annual compliance attestation signed by all Management Body members (post-authorisation ongoing obligation)
+3. Daily client fund reconciliation procedure (Chapter 8)
+4. Dedicated safeguarding account structure documentation (Chapter 8)
+
+---
+
+### 3.3 Outsourcing exit plans — Circular CSSF 22/806
+
+| | |
+|---|---|
+| **CSSF source** | Circular CSSF 22/806 Section 4.3.4 (as amended by 25/883) |
+
+**Description:** For each critical or important outsourced function, a dedicated exit plan must be maintained. This is more prescriptive than the FCA equivalent in that each outsourced function requires its own exit plan. The exit plan must allow the entity to exit without undue disruption to business activities or detriment to service continuity. It should not be treated as a backup solution — a transition plan must also be developed alongside it.
+
+**What needs to be produced:**
+1. Register of all critical or important outsourced functions
+2. For each: a dedicated exit plan and transition plan per Circular 22/806 Section 4.3.4
+
+---
+
+### 3.4 PSD3 — forward-looking obligation (not yet in force)
+
+| | |
+|---|---|
+| **Source** | PSD3 provisional political agreement, 27 November 2025; expected implementation ~end 2027 |
+
+**Description:** Under PSD3, EMI and PI applicants will be required to submit a formal **winding-up plan** as part of the authorisation application. The winding-up plan must be proportionate to the size and business model of the institution and must define suitable measures to be undertaken in the case of failure, ensuring an orderly wind-up of activities in accordance with applicable national legislation. PSD3 has not yet been formally adopted or implemented in Luxembourg. Full compliance is not expected to be mandatory until approximately end-2027. **This is a forward-looking item only — no action required for the current application, but plan design should anticipate this requirement to avoid rework at transposition.**
 
 ---
 
@@ -355,8 +362,10 @@ Annex 10 is formally titled: *"Komercdarbības nepārtrauktības nodrošināšan
 
 | Action | Owner | Notes |
 |---|---|---|
-| Confirm licence type for Latvia entity | Legal / Regulatory counsel | Reg. 270 applies to both licensed and registered PIs/EMIs; required annexes differ by category. Full annex set (1–15) applies to licensed entities; registered entities require Annexes 3, 4, 6, 10, 11, 13, 14, 15 only. Licence type determines which annexes are in scope for the application package. |
+| Review CSSF EMI application form (.docx) | Legal / Regulatory counsel | Download from cssf.lu and confirm whether the application form contains an explicit wind-down plan section or whether this content is embedded within the business plan. This determines whether the Luxembourg submission requires a standalone wind-down document or an embedded section. |
+| Confirm CSSF pre-application meeting expectations | Legal / Regulatory counsel | Some EU NCAs informally require wind-down planning content in the business plan even before PSD3 formalises this requirement. Confirm whether the CSSF has the same informal expectation — best clarified in a pre-application meeting with the CSSF. |
+| Monitor PSD3 transposition timeline | Legal / Regulatory counsel | Provisional agreement reached November 2025; expected implementation ~end 2027. The winding-up plan requirement under PSD3 should be anticipated in the current plan design to avoid rework at transposition. |
 
 ---
 
-*Document prepared based on publicly available regulatory sources. All claims are fact-based and sourced to the specific regulatory documents identified in the Key Regulatory Sources table above. Reg. 270 Annex 10 items 1–5 are translated from the authoritative Latvian-language text at likumi.lv ID 349500.*
+*Document prepared based on publicly available regulatory sources. All claims are fact-based and sourced to the specific regulatory documents identified in the Key Regulatory Sources table above. Where CSSF practice could not be confirmed from public sources (e.g. application form content, informal expectations), this is explicitly flagged as an outstanding action.*
